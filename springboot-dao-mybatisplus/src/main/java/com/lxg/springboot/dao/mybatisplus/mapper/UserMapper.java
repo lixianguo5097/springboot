@@ -13,5 +13,8 @@ import java.util.List;
  */
 @Repository
 public interface UserMapper extends BaseMapper<User> {
+    /**
+     * 方法名与映射文件的id一致
+     */
     List<User> findByXml();
 }

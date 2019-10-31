@@ -18,7 +18,6 @@ import java.util.Map;
  * @Author: XIANGUO LI
  * @Date: 2019-10-31 13:57
  */
-@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired

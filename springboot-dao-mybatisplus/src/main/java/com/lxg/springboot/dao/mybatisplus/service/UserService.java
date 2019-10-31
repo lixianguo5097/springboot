@@ -27,6 +27,7 @@ public interface UserService {
 
 	/**
 	 * 根据id删除
+	 *
 	 * @param id
 	 */
 	public void deleteUser(String id) ;
@@ -38,6 +39,7 @@ public interface UserService {
 
 	/**
 	 * 根据id查询
+	 *
 	 * @param id
 	 */
 	public User findUserById(String id);
@@ -53,5 +55,10 @@ public interface UserService {
      */
 	public PageResult<User> findSearch(Map searchMap, int page, int size);
 
+	/**
+	 * 通过Xml查映射文件查询
+	 * @return
+	 */
 	public List<User> findByXml();
+
 }
