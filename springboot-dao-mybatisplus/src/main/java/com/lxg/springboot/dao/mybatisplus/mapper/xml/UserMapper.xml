@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--对应Mapper的位置-->
-<mapper namespace="com.lxg.springboot.dao.mybatisplus.mapper.UserMapper">
-    <!--这里的id与Mapper中对应的方法名一致-->
-    <select id="findByXml" resultType="User">
-        select * from t_user;
-    </select>
-</mapper>

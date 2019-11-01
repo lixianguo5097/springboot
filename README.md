@@ -1,2 +1,4 @@
-# springboot-dao
-springboot整合数据服务层的一些框架，如SpringDataJpa,Mybatis-Plus,通用Mapper
+# springboot
+springboot整合的框架
+springboot-jpa:springboot整合SpringDataJpa，实现restful的风格增删改查
+springboot-MybatisPlus:springboot整合MybatisPlus，实现restful的风格增删改查
