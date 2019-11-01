@@ -8,8 +8,10 @@
       <list>
         <option value="$PROJECT_DIR$/springboot-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-mybatisplus/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-fileupload/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-file/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_10" project-jdk-name="Android API 29 Platform" project-jdk-type="Android SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_10" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

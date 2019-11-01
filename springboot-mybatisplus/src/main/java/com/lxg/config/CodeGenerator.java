@@ -75,7 +75,7 @@ public class CodeGenerator{
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent( "com.lxg.springboot.dao.mybatisplus" );
-        pc.setController( "controller" );
+        pc.setController( "com.lxg.controller" );
         pc.setService( "service" );
         pc.setServiceImpl( "service/serviceImpl" );
         pc.setMapper("mapper");
