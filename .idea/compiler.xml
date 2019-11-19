@@ -6,15 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot-exceptionHandler" />
         <module name="springboot-file" />
         <module name="springboot-jpa" />
-        <module name="springboot-mybatisplus" />
+        <module name="springboot-mybatisPlus" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="springboot-exceptionHandler" target="1.8" />
       <module name="springboot-file" target="1.8" />
       <module name="springboot-jpa" target="1.8" />
-      <module name="springboot-mybatisplus" target="1.8" />
+      <module name="springboot-mybatisPlus" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

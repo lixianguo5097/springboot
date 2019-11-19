@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/springboot-mybatisplus/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-fileupload/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-file/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-exceptionHandler/pom.xml" />
       </list>
     </option>
   </component>

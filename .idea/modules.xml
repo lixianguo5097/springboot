@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/springboot.iml" filepath="$PROJECT_DIR$/.idea/springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-exceptionHandler/springboot-exceptionHandler.iml" filepath="$PROJECT_DIR$/springboot-exceptionHandler/springboot-exceptionHandler.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-file/springboot-file.iml" filepath="$PROJECT_DIR$/springboot-file/springboot-file.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" filepath="$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-mybatisplus/springboot-mybatisplus.iml" filepath="$PROJECT_DIR$/springboot-mybatisplus/springboot-mybatisplus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" filepath="$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" />
     </modules>
   </component>
 </project>
