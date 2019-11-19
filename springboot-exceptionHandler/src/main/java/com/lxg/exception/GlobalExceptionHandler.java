@@ -1,5 +1,6 @@
 package com.lxg.exception;
 
+
 import com.lxg.common.Result;
 import com.lxg.common.enums.CommonEnum;
 import org.slf4j.Logger;
@@ -8,9 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
-
 
 /**
  * @Description: 全局异常处理 如果使用@RestControllerAdvice 注解
@@ -86,7 +85,6 @@ public class GlobalExceptionHandler {
 	@ResponseBody
 	public Result exceptionHandler(Exception e) {
 		logger.error("未知异常！原因是:", e);
-		return new Result(CommonEnum.INTERNAL_SERVER_ERROR);
+		return new Result(CommonEnum.INTERNAL_SERVER_ERROR,"未知异常！");
 	}
-
 }

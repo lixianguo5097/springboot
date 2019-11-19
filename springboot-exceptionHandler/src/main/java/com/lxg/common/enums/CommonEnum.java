@@ -1,14 +1,12 @@
 package com.lxg.common.enums;
 
 
-import com.lxg.exception.BaseErrorInfoInterface;
-
 /**
  * @Description: 公用描述枚举类
  * @Author: XIANGUO LI
  * @Date: 2019-11-05
  */
-public enum CommonEnum implements BaseErrorInfoInterface {
+public enum CommonEnum {
 	// 数据操作错误定义
 	SUCCESS(true,200, "请求成功!"),
 	ERROR(false,201, "请求失败!"),
@@ -18,34 +16,25 @@ public enum CommonEnum implements BaseErrorInfoInterface {
 	INTERNAL_SERVER_ERROR(false,500, "服务器内部错误!"),
 	SERVER_BUSY(false,503,"服务器正忙，请稍后再试!");
 
-
 	/** 错误码 */
 	private Integer resultCode;
-
 	/** 错误描述 */
 	private String resultMsg;
-
 	private Boolean flag;
-
 	CommonEnum(Boolean flag, Integer resultCode, String resultMsg) {
 		this.resultCode = resultCode;
 		this.resultMsg = resultMsg;
 		this.flag = flag;
 	}
 
-	@Override
-	public Boolean flag() {
+	/** 返回结果集中用到get方法*/
+	public Boolean getFlag() {
 		return flag;
 	}
-
-	@Override
 	public Integer getResultCode() {
 		return resultCode;
 	}
-
-	@Override
 	public String getResultMsg() {
 		return resultMsg;
 	}
-
 }

@@ -31,20 +31,16 @@ public class Result {
     private Object data;
 
     public Result(CommonEnum commonEnum, Object data) {
-        this.flag = commonEnum.flag();
+        this.flag = commonEnum.getFlag();
         this.code = commonEnum.getResultCode();
         this.message = commonEnum.getResultMsg();
         this.data = data;
     }
 
-
     public Result(CommonEnum commonEnum) {
-        this.flag = commonEnum.flag();
+        this.flag = commonEnum.getFlag();
         this.code = commonEnum.getResultCode();
         this.message = commonEnum.getResultMsg();
-    }
-
-    public Result() {
     }
 
     /**

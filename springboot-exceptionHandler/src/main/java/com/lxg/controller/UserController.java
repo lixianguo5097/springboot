@@ -6,6 +6,9 @@ import com.lxg.entity.User;
 import com.lxg.exception.BizException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Description: 异常测试控制器
  * @Author: XIANGUO LI
@@ -35,11 +38,22 @@ public class UserController {
 
     @PutMapping
     public Result update() {
-        System.out.println("开始更新...");
         //这里故意造成数字异常，并且不进行处理
         int i = 1 / 0;
         //如果没有异常，则返回请求成功,返回数据为i
         return new Result(CommonEnum.SUCCESS,i);
     }
 
+    @GetMapping
+    public Result find() {
+        /**
+         * 这里故意造成索引越界异常，并且不进行处理,
+         * 因为没有进行处理，全局异常中也没有进行具体异常的捕获
+         * 所以被最后的Exception捕获了
+         */
+        List<String> list = new ArrayList<>();
+        String str = list.get(0);
+        //如果没有异常，则返回请求成功,返回数据为str
+        return new Result(CommonEnum.SUCCESS,str);
+    }
 }
