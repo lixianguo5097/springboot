@@ -4,3 +4,6 @@ springboot-jpa:springboot整合SpringDataJpa，实现restful的风格增删改�
 springboot-MybatisPlus:springboot整合MybatisPlus，实现restful的风格增删改查
 springboot-file:springboot实现文件上传下载
 springboot-exceptionHandler:springboot实现全局异常处理
+springboot-freemarker:springboot整合freemarker模板引擎
+springboot-jsp:springboot整合jsp
+springboot-multiDatasource:springboot整合多数据源

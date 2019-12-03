@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/springboot-jsp" />
+  </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
@@ -11,6 +14,10 @@
         <option value="$PROJECT_DIR$/springboot-fileupload/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-file/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-exceptionHandler/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-freemarker/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-freemarker/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mutilDatasource/pom.xml" />
       </list>
     </option>
   </component>

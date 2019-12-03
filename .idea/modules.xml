@@ -5,7 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/springboot.iml" filepath="$PROJECT_DIR$/.idea/springboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-exceptionHandler/springboot-exceptionHandler.iml" filepath="$PROJECT_DIR$/springboot-exceptionHandler/springboot-exceptionHandler.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-file/springboot-file.iml" filepath="$PROJECT_DIR$/springboot-file/springboot-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-freemarker/springboot-freemarker.iml" filepath="$PROJECT_DIR$/springboot-freemarker/springboot-freemarker.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" filepath="$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-jsp/springboot-jsp.iml" filepath="$PROJECT_DIR$/springboot-jsp/springboot-jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-multiDatasource/springboot-multiDatasource.iml" filepath="$PROJECT_DIR$/springboot-multiDatasource/springboot-multiDatasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" filepath="$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" />
     </modules>
   </component>
