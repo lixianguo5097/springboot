@@ -10,9 +10,9 @@ import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**
- * @Description: 代码生成器
- * @Author: XIANGUO LI
- * @Date: 2019-10-31 15:45
+ * 代码生成器
+ * @author XIANGUO LI
+ * @date 2019-10-31 15:45
  */
 public class CodeGenerator{
 

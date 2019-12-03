@@ -3,9 +3,9 @@ package com.lxg.common;
 import lombok.Data;
 
 /**
- * @Description: 返回结果
- * @Author: XIANGUO LI
- * @Date: 2019-8-30 15:23
+ * 返回结果
+ * @author XIANGUO LI
+ * @date 2019-8-30 15:23
  */
 @Data
 public class Result {

@@ -11,6 +11,11 @@ import com.lxg.service.UserService;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 测试controller
+ * @author XIANGUO LI
+ * @date 2019-10-31 16:17
+ */
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {

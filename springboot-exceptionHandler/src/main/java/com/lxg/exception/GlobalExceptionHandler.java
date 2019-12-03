@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.text.ParseException;
 
 /**
- * @Description: 全局异常处理 如果使用@RestControllerAdvice 注解
+ * 全局异常处理 如果使用@RestControllerAdvice注解
  * 则会将返回的数据类型转换成JSON格式
  * @author XIANGUO LI
- * @Date: 2019-11-05
+ * @date 2019-11-05
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

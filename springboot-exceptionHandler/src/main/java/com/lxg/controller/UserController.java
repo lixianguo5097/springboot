@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Description: 异常测试控制器
- * @Author: XIANGUO LI
- * @Date: 2019-11-19 14:05
+ * 异常测试控制器
+ * @author XIANGUO LI
+ * @date 2019-11-19 14:05
  */
 @RestController
 @RequestMapping("/user")

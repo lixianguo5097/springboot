@@ -6,9 +6,9 @@ import java.io.Serializable;
 
 
 /**
- * @Description: 用户实体类
- * @Author: XIANGUO LI
- * @Date: 2019-10-28 17:33
+ * 用户实体类
+ * @author XIANGUO LI
+ * @date 2019-10-28 17:33
  */
 @Data
 public class User implements Serializable {

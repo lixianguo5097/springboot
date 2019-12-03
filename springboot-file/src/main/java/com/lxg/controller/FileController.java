@@ -10,9 +10,9 @@ import java.io.*;
 import java.net.URLEncoder;
 
 /**
- * @Description: 文件上传下载
- * @Author: XIANGUO LI
- * @Date: 2019-11-1 15:33
+ * 文件上传下载
+ * @author XIANGUO LI
+ * @date 2019-11-1 15:33
  */
 @RestController
 @RequestMapping("/file")

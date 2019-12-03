@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Description: 用户实现类
- * @Author: XIANGUO LI
- * @Date: 2019-10-31 13:57
+ * 用户实现类
+ * @author XIANGUO LI
+ * @date 2019-10-31 13:57
  */
 @Service
 public class UserServiceImpl implements UserService {

@@ -2,9 +2,9 @@ package com.lxg.common.enums;
 
 
 /**
- * @Description: 公用描述枚举类
- * @Author: XIANGUO LI
- * @Date: 2019-11-05
+ * 公用描述枚举类
+ * @author XIANGUO LI
+ * @date 2019-11-05
  */
 public enum CommonEnum {
 	// 数据操作错误定义

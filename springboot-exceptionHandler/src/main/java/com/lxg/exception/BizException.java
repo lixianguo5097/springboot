@@ -3,10 +3,9 @@ package com.lxg.exception;
 import lombok.Data;
 
 /**
- * 
- * @Description: 业务异常类
+ * 业务异常类
  * @author XIANGUO LI
- * @Date: 2019-11-05
+ * @date 2019-11-05
  */
 @Data
 public class BizException extends RuntimeException {

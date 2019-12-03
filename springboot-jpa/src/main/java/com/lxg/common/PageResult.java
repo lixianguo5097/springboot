@@ -5,9 +5,9 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @Description: 分页结果
- * @Author: XIANGUO LI
- * @Date: 2019-8-30 15:33
+ * 分页结果
+ * @author XIANGUO LI
+ * @date 2019-8-30 15:33
  */
 @Data
 public class PageResult<T> {

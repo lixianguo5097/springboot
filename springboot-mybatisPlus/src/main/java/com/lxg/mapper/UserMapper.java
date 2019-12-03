@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @Description: 用户Mapper
- * @Author: XIANGUO LI
- * @Date: 2019-10-31 11:42
+ * 用户Mapper
+ * @author XIANGUO LI
+ * @date 2019-10-31 11:42
  */
 @Repository
 public interface UserMapper extends BaseMapper<User> {

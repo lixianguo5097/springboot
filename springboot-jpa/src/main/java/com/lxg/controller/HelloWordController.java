@@ -4,9 +4,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description: 入门controller
- * @Author: XIANGUO LI
- * @Date: 2019-10-28 16:23
+ * 入门controller
+ * @author XIANGUO LI
+ * @date 2019-10-28 16:23
  */
 @RestController
 public class HelloWordController {

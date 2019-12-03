@@ -7,6 +7,9 @@ import com.lxg.entity.User;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author XIANGUO LI
+ */
 public interface UserService {
 
 	/**

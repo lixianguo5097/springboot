@@ -9,9 +9,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.util.Properties;
 
 /**
- * @Description: MybatisPlus配置
- * @Author: XIANGUO LI
- * @Date: 2019-10-31 16:17
+ * MybatisPlus配置
+ * @author XIANGUO LI
+ * @date 2019-10-31 16:17
  */
 @EnableTransactionManagement
 @Configuration

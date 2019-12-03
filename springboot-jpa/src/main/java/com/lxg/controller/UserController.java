@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 测试controller
+ * @author XIANGUO LI
+ * @date 2019-10-28 16:23
+ */
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
