@@ -10,6 +10,3 @@ spring:
     template-loader-path: classpath:/templates
     #关闭缓存，及时刷新，上线生产环境需要改为true
     cache: false
-  mvc:
-    view:
-      suffix: /templates
