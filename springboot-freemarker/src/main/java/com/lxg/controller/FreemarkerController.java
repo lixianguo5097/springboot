@@ -47,7 +47,7 @@ public class FreemarkerController {
         dataModel.put("goodsList", list);
         dataModel.put("today", new Date());
         dataModel.put("number", 123456789L);
-        return "test";
+        return "index";
     }
 
 
@@ -55,7 +55,7 @@ public class FreemarkerController {
     public void createFileByFreemarker() throws IOException, TemplateException {
         Configuration configuration = new Configuration(Configuration.getVersion());
         configuration.setClassForTemplateLoading(this.getClass(), "/templates");
-        Template template = configuration.getTemplate("test.ftl");
+        Template template = configuration.getTemplate("index.ftl");
 
         Map<String, Object> dataModel  =new HashMap<>();
         dataModel.put("name", "张三");
@@ -78,7 +78,7 @@ public class FreemarkerController {
         dataModel.put("goodsList", list);
         dataModel.put("today", new Date());
         dataModel.put("number", 123456789L);
-        FileWriter fileWriter = new FileWriter("D:/test.html");
+        FileWriter fileWriter = new FileWriter("D:/index.html");
         template.process(dataModel, fileWriter);
         fileWriter.close();
     }
