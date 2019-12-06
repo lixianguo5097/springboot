@@ -37,13 +37,8 @@ public class FreemarkerController {
         Map<String, Object> map2 = new HashMap<>();
         map2.put("name", "香蕉");
         map2.put("price", 6.3);
-        Map<String, Object> map3 = new HashMap<>();
-        map3.put("name", "橘子");
-        map3.put("price", 5.2);
         list.add(map1);
         list.add(map2);
-        list.add(map3);
-
         dataModel.put("goodsList", list);
         dataModel.put("today", new Date());
         dataModel.put("number", 123456789L);
@@ -53,10 +48,15 @@ public class FreemarkerController {
 
     @Test
     public void createFileByFreemarker() throws IOException, TemplateException {
+        //创建配置对象
         Configuration configuration = new Configuration(Configuration.getVersion());
+        //设置默认生成文件编码
+        configuration.setDefaultEncoding("utf-8");
+        //设置模板路径
         configuration.setClassForTemplateLoading(this.getClass(), "/templates");
+        //获取模板
         Template template = configuration.getTemplate("index.ftl");
-
+        //加载数据
         Map<String, Object> dataModel  =new HashMap<>();
         dataModel.put("name", "张三");
         dataModel.put("message", "hello world");
@@ -68,18 +68,17 @@ public class FreemarkerController {
         Map<String, Object> map2 = new HashMap<>();
         map2.put("name", "香蕉");
         map2.put("price", 6.3);
-        Map<String, Object> map3 = new HashMap<>();
-        map3.put("name", "橘子");
-        map3.put("price", 5.2);
         list.add(map1);
         list.add(map2);
-        list.add(map3);
 
         dataModel.put("goodsList", list);
         dataModel.put("today", new Date());
         dataModel.put("number", 123456789L);
+        //创建输出对象,将文件输出到D盘根目录下
         FileWriter fileWriter = new FileWriter("D:/index.html");
+        //渲染模板和数据
         template.process(dataModel, fileWriter);
+        //关闭输出
         fileWriter.close();
     }
 

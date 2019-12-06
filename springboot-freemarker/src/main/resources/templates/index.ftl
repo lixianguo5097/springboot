@@ -8,13 +8,17 @@
 <#--这是 freemarker 注释，不会输出到文件中-->
 <h1>${name}； ${message}</h1>
 <hr>
+<#--assign-->
+<#--简单类型-->
 <#assign linkman="李四"/>
 联系人：${linkman}
 <#assign info={"tel":"110","sex":"男"}/>
 电话：${info.tel};性别：${info.sex}
 <hr>
+<#--include-->
 <#include "header.ftl"/>
 <hr>
+<#--if-->
 <#assign bool=false/>
 <#if bool>
     bool为true
@@ -22,14 +26,18 @@
     bool为false
 </#if>
 <hr>
+<#--list-->
 <#list goodsList as fruit>
     索引：${fruit_index},
     水果：${fruit.name};
     价格：${fruit.price}<br>
 </#list>
 <hr>
+<#--获取集合总记录数-->
 总共${goodsList?size}条记录
+<#--集合中索引为1的name属性-->
 ${goodsList[1].name}
+<#--集合中第一个元素的name属性-->
 ${goodsList?first.name}
 <hr>
 <#assign str="{'id':'123','text':'文本'}"/>
@@ -44,16 +52,17 @@ id为：${jsonObj.id};text为：${jsonObj.text}<p/>
 <hr>
 格式化显示当前日期时间：${today?string('yyyy年MM月dd日 HH:mm:ss')}
 <hr>
+<#--数值显示处理-->
 ${number}
 <hr>
 ${number?c}<p/>
 <hr>
-${str!"str空值的默认显示值"}
+${strs!"strs空值的默认显示值"}
 <hr>
-<#if str??>
+<#if strs??>
     str变量存在
 <#else >
-    str变量不存在
+    strs变量不存在
 </#if>
 
 </body>
