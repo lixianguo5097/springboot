@@ -18,8 +18,9 @@
         <option value="$PROJECT_DIR$/springboot-jsp/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-freemarker/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-mutilDatasource/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-multiDatasource/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_10" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

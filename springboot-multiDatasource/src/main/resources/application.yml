@@ -1,2 +1,16 @@
 server:
   port: 8080
+spring:
+  datasource:
+    member:
+      jdbc-url: jdbc:mysql://localhost:3306/springBoot
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+    order:
+      jdbc-url: jdbc:mysql://localhost:3306/springBoot_test
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+
+
