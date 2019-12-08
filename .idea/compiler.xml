@@ -18,7 +18,7 @@
     <bytecodeTargetLevel target="8">
       <module name="springboot-exceptionHandler" target="1.8" />
       <module name="springboot-file" target="1.8" />
-      <module name="springboot-freemarker" target="8" />
+      <module name="springboot-freemarker" target="1.5" />
       <module name="springboot-jpa" target="1.8" />
       <module name="springboot-jsp" target="1.8" />
       <module name="springboot-multiDatasource" target="1.8" />

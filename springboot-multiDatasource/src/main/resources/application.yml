@@ -3,12 +3,12 @@ server:
 spring:
   datasource:
     member:
-      jdbc-url: jdbc:mysql://localhost:3306/springBoot
+      jdbc-url: jdbc:mysql://localhost:3306/member
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
     order:
-      jdbc-url: jdbc:mysql://localhost:3306/springBoot_test
+      jdbc-url: jdbc:mysql://localhost:3306/order
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
