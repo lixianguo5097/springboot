@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @date 2019-12-6 14:23
  */
 @Configuration
-@MapperScan(value = "com.lxg.order",sqlSessionFactoryRef = "orderSqlSessionTemplate")
+@MapperScan(value = "com.lxg.order",sqlSessionTemplateRef = "orderSqlSessionTemplate")
 public class OrderDatasourceConfig {
     /**
      * 创建DataSource
@@ -31,7 +31,7 @@ public class OrderDatasourceConfig {
     }
 
     /**
-     * 创建sqlsession
+     * 创建sqlSessionFactory
      * @param dataSource
      * @return
      * @throws Exception
@@ -54,7 +54,7 @@ public class OrderDatasourceConfig {
     }
 
     /**
-     * 创建sqlsession模板
+     * 创建sqlSession模板
      * @param sqlSessionFactory
      * @return
      */

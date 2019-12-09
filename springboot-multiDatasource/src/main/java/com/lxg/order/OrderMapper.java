@@ -6,6 +6,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrderMapper {
-    @Insert("insert into order values(null,#{number});")
-    public int addOrder(@Param("number") String number);
+    /**
+     * 添加订单
+     * @param number 数量
+     * @return
+     */
+    @Insert("insert into `order` values(null,#{number});")
+    public int addOrder(@Param("number") Integer number);
 }
