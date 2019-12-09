@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @date 2019-12-6 14:23
  */
 @Configuration
-@MapperScan(value = "com.lxg.member",sqlSessionTemplateRef = "memberSqlSessionTemplate")
+@MapperScan(value = "com.lxg.mapper.member",sqlSessionTemplateRef = "memberSqlSessionTemplate")
 public class MemberDatasourceConfig {
     /**
      * 创建DataSource

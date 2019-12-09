@@ -1,4 +1,4 @@
-package com.lxg.order;
+package com.lxg.mapper.order;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;

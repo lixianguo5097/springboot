@@ -1,9 +1,12 @@
-package com.lxg.member;
+package com.lxg.mapper.member;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author XIANGUO LI
+ */
 @Repository
 public interface MemberMapper {
     /**

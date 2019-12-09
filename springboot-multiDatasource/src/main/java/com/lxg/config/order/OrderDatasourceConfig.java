@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @date 2019-12-6 14:23
  */
 @Configuration
-@MapperScan(value = "com.lxg.order",sqlSessionTemplateRef = "orderSqlSessionTemplate")
+@MapperScan(value = "com.lxg.mapper.order",sqlSessionTemplateRef = "orderSqlSessionTemplate")
 public class OrderDatasourceConfig {
     /**
      * 创建DataSource
