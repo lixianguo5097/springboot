@@ -3,12 +3,28 @@ server:
 spring:
   datasource:
     member:
-      jdbc-url: jdbc:mysql://localhost:3306/member?useUnicode=true&characterEncoding=utf-8
+      url: jdbc:mysql://localhost:3306/member?useUnicode=true&characterEncoding=utf-8
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: memberDataSource
     order:
-      jdbc-url: jdbc:mysql://localhost:3306/order?useUnicode=true&characterEncoding=utf-8
+      url: jdbc:mysql://localhost:3306/order?useUnicode=true&characterEncoding=utf-8
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: orderDataSource

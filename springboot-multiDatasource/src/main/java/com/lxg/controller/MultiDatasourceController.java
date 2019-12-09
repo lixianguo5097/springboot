@@ -24,7 +24,7 @@ public class MultiDatasourceController {
      * @param age
      * @return
      */
-    @Transactional(rollbackFor = Exception.class,transactionManager = "memberTransactionManager")
+    @Transactional(rollbackFor = Exception.class)
     @RequestMapping("/addUser")
     public String addUser(String name, Integer age)  {
         return memberMapper.addUser(name, age)>0?"success":"fail";
@@ -35,7 +35,7 @@ public class MultiDatasourceController {
      * @param number
      * @return
      */
-    @Transactional(rollbackFor = Exception.class,transactionManager = "orderTransactionManager")
+    @Transactional(rollbackFor = Exception.class)
     @RequestMapping("/addOrder")
     public String addOrder(Integer number) {
         int i = 10 / number;
@@ -44,15 +44,17 @@ public class MultiDatasourceController {
 
     /**
      * 调用order和member数据库
+     * @param name
+     * @param age
      * @param number
      * @return
      */
-    @Transactional(rollbackFor = Exception.class,transactionManager = "memberTransactionManager")
+    @Transactional(rollbackFor = Exception.class )
     @RequestMapping("/addOrderAndMember")
     public String addOrderAndMember(String name, Integer age,Integer number) {
-        memberMapper.addUser(name, age);
-        int i = 10 / number;
-        orderMapper.addOrder(number);
-        return orderMapper.addOrder(number)>0?"success":"fail";
+        int i = memberMapper.addUser(name, age);
+        int j = orderMapper.addOrder(number);
+        int x = 10 / number;
+        return j >0?"success":"fail";
     }
 }
