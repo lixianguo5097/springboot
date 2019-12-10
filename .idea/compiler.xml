@@ -11,6 +11,7 @@
         <module name="springboot-freemarker" />
         <module name="springboot-jpa" />
         <module name="springboot-jsp" />
+        <module name="springboot-logs" />
         <module name="springboot-multiDatasource" />
         <module name="springboot-mybatisPlus" />
       </profile>
@@ -21,6 +22,7 @@
       <module name="springboot-freemarker" target="1.5" />
       <module name="springboot-jpa" target="1.8" />
       <module name="springboot-jsp" target="1.8" />
+      <module name="springboot-logs" target="1.8" />
       <module name="springboot-multiDatasource" target="1.8" />
       <module name="springboot-mybatisPlus" target="1.8" />
     </bytecodeTargetLevel>

@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-freemarker/springboot-freemarker.iml" filepath="$PROJECT_DIR$/springboot-freemarker/springboot-freemarker.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" filepath="$PROJECT_DIR$/springboot-jpa/springboot-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-jsp/springboot-jsp.iml" filepath="$PROJECT_DIR$/springboot-jsp/springboot-jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-logs/springboot-logs.iml" filepath="$PROJECT_DIR$/springboot-logs/springboot-logs.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-multiDatasource/springboot-multiDatasource.iml" filepath="$PROJECT_DIR$/springboot-multiDatasource/springboot-multiDatasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" filepath="$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" />
     </modules>

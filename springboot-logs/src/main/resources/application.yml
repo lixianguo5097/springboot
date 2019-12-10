@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+
+#配置日志文件路径
+logging:
+  config: classpath:logback.xml
