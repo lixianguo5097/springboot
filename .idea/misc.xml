@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/springboot-mutilDatasource/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-multiDatasource/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-logs/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-swagger/pom.xml" />
       </list>
     </option>
   </component>

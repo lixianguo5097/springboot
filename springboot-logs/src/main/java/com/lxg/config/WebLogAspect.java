@@ -48,5 +48,4 @@ public class WebLogAspect {
         // 处理完请求，返回内容
         log.info("RESPONSE : " + ret);
     }
-
 }

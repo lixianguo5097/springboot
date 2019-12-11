@@ -7,4 +7,5 @@ springboot-exceptionHandler:springboot实现全局异常处理\
 springboot-freemarker:springboot整合freemarker模板引擎\
 springboot-jsp:springboot整合jsp\
 springboot-multiDatasource:springboot整合多数据源\
-springboot-logs:springboot整合@Slf4j+logback输出日志,使用AOP统一处理Web请求日志,多环境配置
+springboot-logs:springboot整合@Slf4j+logback输出日志,使用AOP统一处理Web请求日志,多环境配置\
+springboot-swagger:springboot整合swagger2

@@ -17,7 +17,7 @@ public class LogsController {
     private String msg;
 
     @RequestMapping("/log")
-    public int getLog() {
+    public void getLog() {
         try {
             log.error("错误日志输出");
             log.info("信息日志输出");
@@ -25,7 +25,6 @@ public class LogsController {
         } catch (Exception e) {
             log.error("Exception", e);
         }
-        return 0;
     }
 
     @RequestMapping("/msg")

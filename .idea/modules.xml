@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-logs/springboot-logs.iml" filepath="$PROJECT_DIR$/springboot-logs/springboot-logs.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-multiDatasource/springboot-multiDatasource.iml" filepath="$PROJECT_DIR$/springboot-multiDatasource/springboot-multiDatasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" filepath="$PROJECT_DIR$/springboot-mybatisPlus/springboot-mybatisPlus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-swagger/springboot-swagger.iml" filepath="$PROJECT_DIR$/springboot-swagger/springboot-swagger.iml" />
     </modules>
   </component>
 </project>
