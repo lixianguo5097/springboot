@@ -1,18 +1,18 @@
 package com.lxg.config.order;
 
+import com.baomidou.mybatisplus.MybatisConfiguration;
+import com.baomidou.mybatisplus.entity.GlobalConfiguration;
+import com.baomidou.mybatisplus.mapper.LogicSqlInjector;
+import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
 import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.jta.atomikos.AtomikosDataSourceBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -60,20 +60,23 @@ public class OrderDatasourceConfig {
      */
     @Bean(name = "orderSqlSessionFactory")
     public SqlSessionFactory orderSqlSessionFactory(@Qualifier("orderDataSource") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        //逻辑删除 如果值为1,表示已经删除,如果为0,表示未删除
+        GlobalConfiguration globalConfig = new GlobalConfiguration();
+        globalConfig.setLogicDeleteValue("1");
+        globalConfig.setLogicNotDeleteValue("0");
+        globalConfig.setSqlInjector(new LogicSqlInjector());
+        //分页插件
+        MybatisConfiguration configuration = new MybatisConfiguration();
+        configuration.addInterceptor(new PaginationInterceptor());
+
+        MybatisSqlSessionFactoryBean sqlSessionFactoryBean = new MybatisSqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
+        sqlSessionFactoryBean.setConfiguration(configuration);
+        sqlSessionFactoryBean.setGlobalConfig(globalConfig);
+
         return sqlSessionFactoryBean.getObject();
     }
 
-    /**
-     * 创建事务管理器
-     * @param dataSource
-     * @return
-     */
-   /* @Bean(name = "orderTransactionManager")
-    public DataSourceTransactionManager orderTransactionManager(@Qualifier("orderDataSource") DataSource dataSource) {
-        return new DataSourceTransactionManager(dataSource);
-    }*/
 
     /**
      * 创建sqlSession模板
