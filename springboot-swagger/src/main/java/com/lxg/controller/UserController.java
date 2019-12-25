@@ -2,11 +2,8 @@ package com.lxg.controller;
 
 import com.lxg.pojo.User;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,10 +22,10 @@ import java.util.Map;
 @Api(value="用户操作接口")
 public class UserController {
 	/**
-	 * @ApiOperation注解来给API增加说明、通过@ApiParam注解来给参数增加说明。
+	 * ApiOperation注解来给API增加说明、通过@ApiParam注解来给参数增加说明。
 	 * value 是标题,notes是详细说明
-	 * @param user
-	 * @return
+	 * @param user 用户
+	 * @return 测试map
 	 */
 	@ApiOperation(value="创建用户", notes="根据User对象创建用户")
 	@PostMapping("/user")
