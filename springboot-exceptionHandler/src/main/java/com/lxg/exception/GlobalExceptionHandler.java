@@ -14,7 +14,7 @@ import java.text.ParseException;
 /**
  * 全局异常处理 如果使用@RestControllerAdvice注解
  * 则会将返回的数据类型转换成JSON格式
- * @author XIANGUO LI
+ * @author LXG
  * @date 2019-11-05
  */
 @ControllerAdvice

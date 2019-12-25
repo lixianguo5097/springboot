@@ -4,8 +4,8 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-9 15:13
+ * @author LXG
+ * @date 2019-12-9
  */
 @Data
 @ConfigurationProperties(prefix = "spring.datasource.order")

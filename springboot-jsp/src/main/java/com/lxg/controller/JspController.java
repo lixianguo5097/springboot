@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-3 18:17
+ * @author LXG
+ * @date 2019-12-3
  */
 @Controller
 public class JspController {

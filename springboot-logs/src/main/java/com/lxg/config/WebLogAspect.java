@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-10 17:28
+ * @author LXG
+ * @date 2019-12-10
  */
 @Component
 @Aspect

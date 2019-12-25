@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 入门controller
- * @author XIANGUO LI
- * @date 2019-10-28 16:23
+ * @author LXG
+ * @date 2019-10-28
  */
 @RestController
 public class HelloWordController {

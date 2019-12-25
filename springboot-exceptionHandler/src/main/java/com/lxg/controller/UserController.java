@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * 异常测试控制器
- * @author XIANGUO LI
- * @date 2019-11-19 14:05
+ * @author LXG
+ * @date 2019-11-19
  */
 @RestController
 @RequestMapping("/user")

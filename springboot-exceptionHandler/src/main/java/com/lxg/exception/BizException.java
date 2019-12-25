@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * 业务异常类
- * @author XIANGUO LI
+ * @author LXG
  * @date 2019-11-05
  */
 @Data

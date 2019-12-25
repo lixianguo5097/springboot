@@ -8,8 +8,8 @@ import java.util.List;
 
 /**
  * 用户Mapper
- * @author XIANGUO LI
- * @date 2019-10-31 11:42
+ * @author LXG
+ * @date 2019-10-31
  */
 @Repository
 public interface UserMapper extends BaseMapper<User> {

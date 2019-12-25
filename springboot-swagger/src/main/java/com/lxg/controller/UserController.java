@@ -15,7 +15,7 @@ import java.util.Map;
 /**
 * 用户控制层
 * 在浏览器输入 http://localhost:8080/swagger-ui.html 即可查看
-* @author XIANGUO LI
+* @author LXG
  */
 @RestController
 @RequestMapping(value = "/api")

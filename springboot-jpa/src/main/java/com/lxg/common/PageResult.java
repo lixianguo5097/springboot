@@ -6,8 +6,8 @@ import java.util.List;
 
 /**
  * 分页结果
- * @author XIANGUO LI
- * @date 2019-8-30 15:33
+ * @author LXG
+ * @date 2019-8-30
  */
 @Data
 public class PageResult<T> {

@@ -11,8 +11,8 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**
  * 代码生成器
- * @author XIANGUO LI
- * @date 2019-10-31 15:45
+ * @author LXG
+ * @date 2019-10-31
  */
 public class CodeGenerator{
 

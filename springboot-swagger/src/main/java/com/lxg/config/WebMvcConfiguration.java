@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 跨域问题
- * @author XIANGUO LI
+ * @author LXG
  */
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer{

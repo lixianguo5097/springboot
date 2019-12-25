@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author XIANGUO LI
+ * @author LXG
  */
 @RestController
 public class MultiDatasourceController {

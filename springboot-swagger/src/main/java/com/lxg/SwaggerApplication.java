@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-11 15:34
+ * @author LXG
+ * @date 2019-12-11
  */
 @SpringBootApplication
 public class SwaggerApplication {

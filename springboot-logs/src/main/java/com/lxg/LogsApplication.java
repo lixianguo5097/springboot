@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-10 13:40
+ * @author LXG
+ * @date 2019-12-10
  */
 @SpringBootApplication
 public class LogsApplication {

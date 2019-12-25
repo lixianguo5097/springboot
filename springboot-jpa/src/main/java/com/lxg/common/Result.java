@@ -4,8 +4,8 @@ import lombok.Data;
 
 /**
  * 返回结果
- * @author XIANGUO LI
- * @date 2019-8-30 15:23
+ * @author LXG
+ * @date 2019-8-30
  */
 @Data
 public class Result {

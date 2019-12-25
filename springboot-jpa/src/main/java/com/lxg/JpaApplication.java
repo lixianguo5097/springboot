@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 启动类
- * @author XIANGUO LI
- * @date 2019-10-28 16:21
+ * @author LXG
+ * @date 2019-10-28
  */
 @SpringBootApplication
 public class JpaApplication {

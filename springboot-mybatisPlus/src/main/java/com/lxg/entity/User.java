@@ -8,8 +8,8 @@ import java.io.Serializable;
 
 /**
  * 用户实体类
- * @author XIANGUO LI
- * @date 2019-10-28 17:33
+ * @author LXG
+ * @date 2019-10-28
  */
 @TableName("t_user")
 @Data

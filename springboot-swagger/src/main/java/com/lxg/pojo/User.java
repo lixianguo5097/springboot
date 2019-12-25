@@ -3,8 +3,8 @@ package com.lxg.pojo;
 import lombok.Data;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-11 15:04
+ * @author LXG
+ * @date 2019-12-11
  */
 @Data
 public class User {

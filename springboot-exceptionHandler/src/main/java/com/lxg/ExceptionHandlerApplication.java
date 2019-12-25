@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 启动类
- * @author XIANGUO LI
- * @date 2019-11-1 15:27
+ * @author LXG
+ * @date 2019-11-1
  */
 @SpringBootApplication
 public class ExceptionHandlerApplication {

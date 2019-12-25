@@ -18,8 +18,8 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-6 14:23
+ * @author LXG
+ * @date 2019-12-6
  */
 @Configuration
 @MapperScan(value = "com.lxg.mapper.member",sqlSessionTemplateRef = "memberSqlSessionTemplate")

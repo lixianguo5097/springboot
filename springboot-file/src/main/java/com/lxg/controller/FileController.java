@@ -11,8 +11,8 @@ import java.net.URLEncoder;
 
 /**
  * 文件上传下载
- * @author XIANGUO LI
- * @date 2019-11-1 15:33
+ * @author LXG
+ * @date 2019-11-1
  */
 @RestController
 @RequestMapping("/file")

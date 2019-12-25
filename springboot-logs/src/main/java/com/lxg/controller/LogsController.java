@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-10 13:45
+ * @author LXG
+ * @date 2019-12-10
  */
 @RestController
 @Slf4j

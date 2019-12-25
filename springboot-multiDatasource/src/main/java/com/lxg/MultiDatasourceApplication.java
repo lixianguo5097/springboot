@@ -9,8 +9,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * @author XIANGUO LI
- * @date 2019-12-3 17:55
+ * @author LXG
+ * @date 2019-12-3
  */
 @SpringBootApplication
 @EnableConfigurationProperties({MemberConfig.class, OrderConfig.class})

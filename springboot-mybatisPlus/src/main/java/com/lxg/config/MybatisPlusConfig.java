@@ -10,8 +10,8 @@ import java.util.Properties;
 
 /**
  * MybatisPlus配置
- * @author XIANGUO LI
- * @date 2019-10-31 16:17
+ * @author LXG
+ * @date 2019-10-31
  */
 @EnableTransactionManagement
 @Configuration

@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 /**
- * @author XIANGUO LI
+ * @author LXG
  */
 public interface UserDao  extends JpaRepository<User,String>, JpaSpecificationExecutor<User> {
     /**

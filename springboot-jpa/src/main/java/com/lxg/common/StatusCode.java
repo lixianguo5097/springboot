@@ -2,8 +2,8 @@ package com.lxg.common;
 
 /**
  * 返回状态码
- * @author XIANGUO LI
- * @date 2019-8-30 15:36
+ * @author LXG
+ * @date 2019-8-30
  */
 public class StatusCode {
     //成功

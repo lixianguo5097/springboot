@@ -3,7 +3,7 @@ package com.lxg.common.enums;
 
 /**
  * 公用描述枚举类
- * @author XIANGUO LI
+ * @author LXG
  * @date 2019-11-05
  */
 public enum CommonEnum {

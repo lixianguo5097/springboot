@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author XIANGUO LI
+ * @author LXG
  */
 @Repository
 public interface MemberMapper {
