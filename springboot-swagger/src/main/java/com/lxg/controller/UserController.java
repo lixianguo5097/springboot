@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping(value = "/api")
-@Api(value="用户操作接口")
+@Api(tags="用户操作接口")
 public class UserController {
 	/**
 	 * ApiOperation注解来给API增加说明、通过@ApiParam注解来给参数增加说明。

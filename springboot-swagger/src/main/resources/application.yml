@@ -1,2 +1,13 @@
 server:
   port: 8080
+
+####swagger相关配置
+#swagger:
+#  base-package: com.lxg.controller
+#  title: Spring Boot中使用Swagger2构建RESTful APIs
+#  description: swagger2-文档构建利器
+#  version: 1.7
+#  terms-of-service-url: www.lxgblog.com
+#  contact:
+#    name: LXG
+#    email: 15279295097@163.com
