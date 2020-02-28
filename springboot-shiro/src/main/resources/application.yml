@@ -6,3 +6,5 @@ spring:
     url: jdbc:mysql://localhost:3306/shirojwt
 mybatis-plus:
   type-aliases-package: com.lxg.mapper
+  global-config:
+    id-type: 0
