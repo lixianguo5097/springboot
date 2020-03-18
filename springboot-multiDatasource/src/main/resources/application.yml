@@ -28,3 +28,5 @@ spring:
       maxPoolSize: 25
       minPoolSize: 3
       uniqueResourceName: orderDataSource
+  jta:
+    log-dir: /home
