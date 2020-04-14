@@ -1,4 +1,4 @@
-package com.lxg.model.entity;
+package com.lxg.model;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
@@ -8,15 +8,15 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * RolePermission
+ * UserRole
  * @author dolyw.com
  * @date 2018/8/31 14:43
  */
-@TableName("role_permission")
+@TableName("user_role")
 @Data
-public class RolePermission implements Serializable {
+public class UserRole implements Serializable {
 
-    private static final long serialVersionUID = -8564770707000796503L;
+    private static final long serialVersionUID = -3397516891053950951L;
 
     /**
      * ID
@@ -25,14 +25,15 @@ public class RolePermission implements Serializable {
     private Integer id;
 
     /**
+     * 用户id
+     */
+    @TableField("user_id")
+    private Integer userId;
+
+    /**
      * 角色id
      */
     @TableField("role_id")
     private Integer roleId;
 
-    /**
-     * 权限id
-     */
-    @TableField("permission_id")
-    private Integer permissionId;
 }

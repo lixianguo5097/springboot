@@ -2,14 +2,11 @@ package com.lxg.config;
 
 import com.lxg.mapper.PermissionMapper;
 import com.lxg.mapper.RoleMapper;
-import com.lxg.model.JWTToken;
-import com.lxg.model.entity.Permission;
-import com.lxg.model.entity.Role;
-import com.lxg.model.entity.User;
+import com.lxg.model.Permission;
+import com.lxg.model.Role;
+import com.lxg.model.User;
 import com.lxg.service.UserService;
 import com.lxg.util.JWTUtil;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

@@ -1,4 +1,4 @@
-package com.lxg.model;
+package com.lxg.config;
 
 import org.apache.shiro.authc.AuthenticationToken;
 

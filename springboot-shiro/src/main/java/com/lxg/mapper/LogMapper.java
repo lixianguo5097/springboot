@@ -1,7 +1,7 @@
 package com.lxg.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.lxg.model.entity.Log;
+import com.lxg.model.Log;
 import org.springframework.stereotype.Repository;
 
 /**

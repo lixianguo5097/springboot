@@ -1,6 +1,6 @@
 package com.lxg.service;
 
-import com.lxg.model.entity.User;
+import com.lxg.model.User;
 
 public interface UserService {
 

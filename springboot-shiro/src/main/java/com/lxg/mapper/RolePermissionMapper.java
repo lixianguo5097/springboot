@@ -2,7 +2,7 @@ package com.lxg.mapper;
 
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.lxg.model.entity.RolePermission;
+import com.lxg.model.RolePermission;
 
 /**
  * RolePermissionMapper

@@ -2,7 +2,6 @@ package com.lxg.controller;
 
 import com.lxg.common.PageResult;
 import com.lxg.common.Result;
-import com.lxg.common.StatusCode;
 import com.lxg.entity.User;
 import com.lxg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST)
     public Result addUser(@RequestBody User user) {
         userService.saveUser(user);
-        return new Result(true, StatusCode.OK,"新增成功");
+        return Result.success();
     }
 
     /**
@@ -40,10 +39,10 @@ public class UserController {
     @RequestMapping(method = RequestMethod.PUT)
     public Result updateUser(@RequestBody User user) {
         if (user.getId() == null || "".equals(user.getId())) {
-            return new Result(false, StatusCode.ERROR,"无id,更新失败");
+            return Result.fail("无id,更新失败");
         }
         userService.saveUser(user);
-        return new Result(true, StatusCode.OK,"更新成功");
+        return Result.success();
     }
 
     /**
@@ -54,7 +53,7 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Result delete(@PathVariable String id) {
         userService.deleteUser(id);
-        return new Result(true, StatusCode.OK,"删除成功");
+        return Result.success();
     }
 
     /**
@@ -71,7 +70,7 @@ public class UserController {
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Result findByUserId(@PathVariable String id) {
-        return new Result(true, StatusCode.OK,"查询成功",userService.findUserById(id));
+        return Result.success(userService.findUserById(id));
     }
 
     /**
@@ -79,7 +78,7 @@ public class UserController {
      */
     @RequestMapping(value="/search",method = RequestMethod.POST)
     public Result findSearch(@RequestBody Map searchMap){
-        return new Result(true,StatusCode.OK,"查询成功 ",userService.findSearch(searchMap));
+        return Result.success(userService.findSearch(searchMap));
     }
 
     /**
@@ -91,6 +90,6 @@ public class UserController {
     @RequestMapping(value = "/search/{page}/{size}",method = RequestMethod.POST)
     public Result findSearch(@RequestBody Map searchMap,@PathVariable int page,@PathVariable int size){
         Page<User> pageBean = userService.findSearch(searchMap, page, size);
-        return new Result(true,StatusCode.OK,"查询成功",new PageResult<>(pageBean.getTotalElements(),pageBean.getContent()) );
+        return Result.success(new PageResult<>(pageBean.getTotalElements(),pageBean.getContent()) );
     }
 }

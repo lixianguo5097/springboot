@@ -1,4 +1,4 @@
-package com.lxg.model.entity;
+package com.lxg.model;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;

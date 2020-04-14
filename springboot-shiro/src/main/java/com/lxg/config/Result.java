@@ -1,4 +1,4 @@
-package com.lxg.common;
+package com.lxg.config;
 
 /**
  * 统一API响应结果封装

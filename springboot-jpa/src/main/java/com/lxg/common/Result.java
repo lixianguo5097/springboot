@@ -1,47 +1,66 @@
 package com.lxg.common;
 
-import lombok.Data;
-
 /**
- * 返回结果
+ * 统一API响应结果封装
  * @author LXG
  * @date 2019-8-30
  */
-@Data
-public class Result {
-    /**
-     * 返回结构状态
-     */
-    private Boolean flag;
-
-    /**
-     * 返回状态码
-     */
-    private Integer code;
-
-    /**
-     * 返回消息
-     */
+public class Result<T> {
+    private int code;
     private String message;
+    private T data;
 
-    /**
-     * 返回数据内容
-     */
-    private Object data;
+    public Result setCode(ResultCode resultCode) {
+        this.code = resultCode.code();
+        return this;
+    }
 
-    public Result(Boolean flag, Integer code, String message, Object data) {
-        this.flag = flag;
-        this.code = code;
+    public int getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public Result setMessage(String message) {
         this.message = message;
+        return this;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public Result setData(T data) {
         this.data = data;
+        return this;
     }
 
-    public Result(Boolean flag, Integer code, String message) {
-        this.flag = flag;
-        this.code = code;
-        this.message = message;
+    private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
+
+    public static Result success() {
+        return new Result()
+                .setCode(ResultCode.SUCCESS)
+                .setMessage(DEFAULT_SUCCESS_MESSAGE);
     }
 
-    public Result() {
+    public static <T> Result<T> success(T data) {
+        return new Result()
+                .setCode(ResultCode.SUCCESS)
+                .setMessage(DEFAULT_SUCCESS_MESSAGE)
+                .setData(data);
+    }
+
+    public static Result fail(String message) {
+        return new Result()
+                .setCode(ResultCode.FAIL)
+                .setMessage(message);
+    }
+
+    public static Result fail(ResultCode resultCode,String msg) {
+        return new Result()
+                .setCode(resultCode)
+                .setMessage(msg);
     }
 }

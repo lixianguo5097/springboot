@@ -2,8 +2,8 @@ package com.lxg.mapper;
 
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.lxg.model.entity.Permission;
-import com.lxg.model.entity.Role;
+import com.lxg.model.Permission;
+import com.lxg.model.Role;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

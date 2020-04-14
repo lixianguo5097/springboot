@@ -1,6 +1,6 @@
 package com.lxg.service.impl;
 
-import com.lxg.model.entity.User;
+import com.lxg.model.User;
 import com.lxg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

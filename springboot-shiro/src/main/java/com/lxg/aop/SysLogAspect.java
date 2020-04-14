@@ -1,11 +1,11 @@
 package com.lxg.aop;
 
 import com.alibaba.fastjson.JSON;
-import com.lxg.exception.BizException;
+import com.alibaba.fastjson.JSONObject;
+import com.lxg.exception.MyException;
 import com.lxg.mapper.LogMapper;
-import com.lxg.model.CommonEnum;
-import com.lxg.model.Result;
-import com.lxg.model.entity.Log;
+import com.lxg.config.ResultCode;
+import com.lxg.model.Log;
 import com.lxg.util.JWTUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
@@ -33,7 +33,7 @@ import java.util.Date;
 @Component
 public class SysLogAspect {
 
-
+    private static String CODE="code";
     @Resource
     private LogMapper logMapper;
 
@@ -56,7 +56,7 @@ public class SysLogAspect {
             log.info("请求参数 : " + JSON.toJSONString(joinPoint.getArgs()));
 
         } catch (Exception e) {
-            if (e instanceof BizException) {
+            if (e instanceof MyException) {
                 throw e;
             } else {
                 log.info("记录操作日志异常：" + e.getMessage());
@@ -94,7 +94,7 @@ public class SysLogAspect {
                     try {
                         log.setUsername(JSON.parseObject(params).getString("username"));
                     } catch (NullPointerException e) {
-                        throw new BizException(401, "Unauthorized");
+                        throw new MyException(401, "Unauthorized");
                     }
                 } else {
                     log.setUsername(JWTUtil.getUsername(user));
@@ -107,8 +107,9 @@ public class SysLogAspect {
                 //如果返回错误，记录错误返回参数
                 if (ret != null) {
                     String respJson = JSON.toJSONString(ret);
-                    Result result = JSON.parseObject(respJson, Result.class);
-                    if (!result.getCode().equals(CommonEnum.SUCCESS.getResultCode())) {
+                    System.out.println(respJson);
+                    JSONObject object = JSON.parseObject(respJson);
+                    if (object.getInteger(CODE) != ResultCode.SUCCESS.code()) {
                         log.setRespParam(respJson);
                         log.setErrorLogFlag(true);
                     }
@@ -153,6 +154,4 @@ public class SysLogAspect {
         }
         return null;
     }
-
-
 }

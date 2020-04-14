@@ -1,10 +1,3 @@
 spring:
-  datasource:
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/shirojwt
-mybatis-plus:
-  type-aliases-package: com.lxg.mapper
-  global-config:
-    id-type: 0
+  profiles:
+    active: dev
