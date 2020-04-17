@@ -18,7 +18,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     /**
      * 判断用户是否想要登入。
-     * 检测header里面是否包含Authorization字段即可
+     * token
      */
     @Override
     protected boolean isLoginAttempt(ServletRequest request, ServletResponse response) {
