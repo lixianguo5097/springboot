@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XSS测试</title>
+</head>
+<body>
+<div>
+    请输入姓名：<input type="text" id="username" value="<script>alert('xss')</script>"> &nbsp;
+    请输入密码：<input type="password" id="password">
+    <button id="b">提交</button>
+</div>
+<div>
+    <h5 id="u">username:&nbsp;</h5>
+    <h5 id="p">password:&nbsp;</h5>
+</div>
+<hr>
+<p>
+<div>
+    请输入姓名：<input type="text" id="name" value="<script>alert('xss')</script>"> &nbsp;
+    <button id="b1">提交</button>
+</div>
+<div>
+    <h5 id="u1">username:&nbsp;</h5>
+</div>
+<hr>
+<p>
+<div>
+    请输入姓名：<input type="text" id="name2" value="<script>alert('xss')</script>"> &nbsp;
+    <button id="b2">提交</button>
+</div>
+<div>
+    <h5 id="u2">username:&nbsp;</h5>
+</div>
+</body>
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#b").click(function(){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            $.ajax({
+                type: 'POST',
+                url: "xss/user",
+                data: JSON.stringify({
+                    "username":username,
+                    "password":password
+                }),
+                success: function (data) {
+                    $("#u").append(data.username);
+                    $("#p").append(data.password);
+                },
+                error: function(data){
+                    alert(data);
+                },
+                contentType:"application/json"
+            });
+        });
+
+        $("#b1").click(function(){
+            var name = $("#name").val();
+            $.ajax({
+                type: 'POST',
+                url: "xss/postUser",
+                data: {
+                    "name":name,
+                },
+                success: function (data) {
+                    $("#u1").append(data);
+                },
+                error: function(data){
+                    alert(data);
+                },
+            });
+        });
+
+        $("#b2").click(function(){
+            var name = $("#name2").val();
+            $.ajax({
+                type: 'GET',
+                url: "xss/getUser",
+                data: {
+                    "name":name,
+                },
+                success: function (data) {
+                    $("#u2").append(data);
+                },
+                error: function(data){
+                    alert(data);
+                },
+            });
+        });
+    });
+</script>
+
+</html>
