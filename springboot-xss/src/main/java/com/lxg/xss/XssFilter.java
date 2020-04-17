@@ -8,6 +8,7 @@ package com.lxg.xss;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
@@ -18,8 +19,10 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(filterName = "xssFilter", urlPatterns = "/*", asyncSupported = true)
-@Component
+/**
+ * urlPatterns 添加需要过滤的url,如果json格式的需要过滤，则同样需要在这里添加
+ */
+@WebFilter(filterName = "xssFilter", urlPatterns = "/xss/*", asyncSupported = true)
 public class XssFilter implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -34,21 +37,5 @@ public class XssFilter implements Filter {
 	@Override
 	public void destroy() {
 	}
-	/**
-	 * 过滤json类型的
-	 * @param builder
-	 * @return
-	 */
-	@Bean
-	@Primary
-	public ObjectMapper xssObjectMapper(Jackson2ObjectMapperBuilder builder) {
-		// 解析器
-		ObjectMapper objectMapper = builder.createXmlMapper(false).build();
-		// 注册xss解析器
-		SimpleModule xssModule = new SimpleModule();
-		xssModule.addSerializer(new XssStringJsonSerializer());
-		objectMapper.registerModule(xssModule);
-		// 返回
-		return objectMapper;
-	}
+
 }

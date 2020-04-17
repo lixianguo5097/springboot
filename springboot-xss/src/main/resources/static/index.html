@@ -79,12 +79,12 @@
             var name = $("#name2").val();
             $.ajax({
                 type: 'GET',
-                url: "xss/getUser",
+                url: "xss/t",
                 data: {
                     "name":name,
                 },
                 success: function (data) {
-                    $("#u2").append(data);
+                    $("#u2").append(data.username);
                 },
                 error: function(data){
                     alert(data);
