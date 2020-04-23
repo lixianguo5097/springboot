@@ -1,7 +1,7 @@
 package com.lxg.controller;
 
 import com.lxg.common.Result;
-import com.lxg.entity.User;
+import com.lxg.model.User;
 import com.lxg.exception.MyException;
 import org.springframework.web.bind.annotation.*;
 

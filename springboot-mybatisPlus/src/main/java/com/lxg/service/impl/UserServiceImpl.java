@@ -3,7 +3,7 @@ package com.lxg.service.impl;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.lxg.common.PageResult;
-import com.lxg.entity.User;
+import com.lxg.model.User;
 import com.lxg.mapper.UserMapper;
 import com.lxg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

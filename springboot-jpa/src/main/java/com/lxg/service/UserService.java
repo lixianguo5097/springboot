@@ -1,7 +1,7 @@
 package com.lxg.service;
 
 import com.lxg.dao.UserDao;
-import com.lxg.entity.User;
+import com.lxg.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

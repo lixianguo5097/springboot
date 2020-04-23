@@ -1,6 +1,6 @@
 package com.lxg.dao;
 
-import com.lxg.entity.User;
+import com.lxg.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;

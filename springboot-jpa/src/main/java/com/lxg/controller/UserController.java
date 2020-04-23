@@ -2,7 +2,7 @@ package com.lxg.controller;
 
 import com.lxg.common.PageResult;
 import com.lxg.common.Result;
-import com.lxg.entity.User;
+import com.lxg.model.User;
 import com.lxg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

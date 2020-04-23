@@ -2,7 +2,7 @@ package com.lxg.service;
 
 
 import com.lxg.common.PageResult;
-import com.lxg.entity.User;
+import com.lxg.model.User;
 
 import java.util.List;
 import java.util.Map;

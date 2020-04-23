@@ -1,4 +1,4 @@
-package com.lxg.pojo;
+package com.lxg.model;
 
 import lombok.Data;
 

@@ -79,7 +79,7 @@ public class CodeGenerator{
         pc.setService( "service" );
         pc.setServiceImpl( "service/serviceImpl" );
         pc.setMapper("mapper");
-        pc.setEntity( "entity" );
+        pc.setEntity( "model" );
         pc.setXml( "xml" );
         mpg.setPackageInfo( pc );
         // 执行生成

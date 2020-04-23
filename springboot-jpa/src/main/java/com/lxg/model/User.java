@@ -1,4 +1,4 @@
-package com.lxg.entity;
+package com.lxg.model;
 
 import lombok.Data;
 

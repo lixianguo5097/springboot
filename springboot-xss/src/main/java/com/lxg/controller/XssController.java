@@ -1,6 +1,6 @@
 package com.lxg.controller;
 
-import com.lxg.entity.User;
+import com.lxg.model.User;
 import org.springframework.web.bind.annotation.*;
 
 /**
