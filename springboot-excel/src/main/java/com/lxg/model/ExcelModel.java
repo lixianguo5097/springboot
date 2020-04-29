@@ -1,6 +1,9 @@
 package com.lxg.model;
 
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.util.CellRangeAddress;
 
 import java.text.SimpleDateFormat;
@@ -14,6 +17,7 @@ import java.util.List;
  * @date 2020-4-28
  */
 public class ExcelModel {
+
     public static HSSFWorkbook createExcel(List<Data> dataList) {
         //创建工作簿
         HSSFWorkbook workbook = new HSSFWorkbook();
@@ -44,7 +48,7 @@ public class ExcelModel {
         //风速
         CellRangeAddress callRangeAddressWindSpeed = new CellRangeAddress(3, 3, 14, 15);
         //风向
-        CellRangeAddress callRangeAddressWindDir = new CellRangeAddress(3, 3, 0, 16);
+        CellRangeAddress callRangeAddressWindDir = new CellRangeAddress(3, 3, 16, 17);
 
         //填表人
         CellRangeAddress callRangeAddressRegister = new CellRangeAddress(dataList.size()+5, dataList.size()+5, 1, 2);
@@ -269,27 +273,25 @@ public class ExcelModel {
         HSSFCellStyle style = workbook.createCellStyle();
         //是否水平居中
         if (flag) {
-            style.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+            style.setAlignment(HorizontalAlignment.CENTER);
         }
 
         //垂直居中
-        style.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
+        style.setVerticalAlignment(VerticalAlignment.CENTER);
 
         //创建字体
         HSSFFont font = workbook.createFont();
         //是否加粗字体
-        if(flag1){
-            font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
-        }
+        font.setBold(flag1);
         font.setFontHeightInPoints(fontSize);
         //加载字体
         style.setFont(font);
         //是否加上边框
         if (flag2) {
-            style.setBorderBottom((short)1);
-            style.setBorderTop((short)1);
-            style.setBorderLeft((short)1);
-            style.setBorderRight((short)1);
+            style.setBorderBottom(BorderStyle.THIN);
+            style.setBorderTop(BorderStyle.THIN);
+            style.setBorderLeft(BorderStyle.THIN);
+            style.setBorderRight(BorderStyle.THIN);
         }
         return style;
     }

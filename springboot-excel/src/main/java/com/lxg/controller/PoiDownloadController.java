@@ -3,9 +3,7 @@ package com.lxg.controller;
 import com.lxg.constant.ExcelConstant;
 import com.lxg.model.User;
 import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.ss.usermodel.DataValidation;
-import org.apache.poi.ss.usermodel.DataValidationConstraint;
-import org.apache.poi.ss.usermodel.DataValidationHelper;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddressList;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -213,9 +211,9 @@ public class PoiDownloadController {
         //创建单元格样式
         HSSFCellStyle cellStyle = workbook.createCellStyle();
         //水平居中
-        cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);
         //垂直居中
-        cellStyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
 
         //创建单元格
         HSSFCell cell = rows.createCell(j);
