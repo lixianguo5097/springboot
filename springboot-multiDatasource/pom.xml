@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lxg</groupId>
-    <artifactId>springboot-mutilDatasource</artifactId>
+    <artifactId>springboot-multiDatasource</artifactId>
     <version>1.0-SNAPSHOT</version>
     <parent>
         <groupId>org.springframework.boot</groupId>

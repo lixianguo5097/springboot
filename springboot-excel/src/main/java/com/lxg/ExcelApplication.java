@@ -13,9 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020-4-23
  */
 @SpringBootApplication
-public class PoiApplication {
+public class ExcelApplication {
     public static void main(String[] args) {
-        SpringApplication.run(PoiApplication.class, args);
+        SpringApplication.run(ExcelApplication.class, args);
     }
 }
 

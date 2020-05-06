@@ -1,7 +1,7 @@
 package com.lxg.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.lxg.model.User;
+import com.lxg.model.MybatisUser;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,9 +12,9 @@ import java.util.List;
  * @date 2019-10-31
  */
 @Repository
-public interface UserMapper extends BaseMapper<User> {
+public interface MyBatisUserMapper extends BaseMapper<MybatisUser> {
     /**
      * 方法名与映射文件的id一致
      */
-    List<User> findByXml();
+    List<MybatisUser> findByXml();
 }

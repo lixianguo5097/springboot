@@ -50,8 +50,8 @@ CREATE TABLE `permission` (
 -- ----------------------------
 -- Records of permission
 -- ----------------------------
-INSERT INTO `permission` VALUES ('1', '查看用户', 'user:view');
-INSERT INTO `permission` VALUES ('2', '操作用户', 'user:edit');
+INSERT INTO `permission` VALUES ('1', '查看用户', 'mybatisUser:view');
+INSERT INTO `permission` VALUES ('2', '操作用户', 'mybatisUser:edit');
 
 -- ----------------------------
 -- Table structure for role
@@ -93,10 +93,10 @@ INSERT INTO `role_permission` VALUES ('2', '1', '2');
 INSERT INTO `role_permission` VALUES ('3', '2', '1');
 
 -- ----------------------------
--- Table structure for user
+-- Table structure for mybatisUser
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
+DROP TABLE IF EXISTS `mybatisUser`;
+CREATE TABLE `mybatisUser` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `password` varchar(80) NOT NULL COMMENT '密码',
   `username` varchar(20) NOT NULL COMMENT '昵称',
@@ -105,10 +105,10 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
--- Records of user
+-- Records of mybatisUser
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', 'admin', '2020-02-24 10:04:08');
-INSERT INTO `user` VALUES ('2', 'lxg', 'lxg', '2020-02-24 10:04:08');
+INSERT INTO `mybatisUser` VALUES ('1', 'admin', 'admin', '2020-02-24 10:04:08');
+INSERT INTO `mybatisUser` VALUES ('2', 'lxg', 'lxg', '2020-02-24 10:04:08');
 
 -- ----------------------------
 -- Table structure for user_role
@@ -121,7 +121,7 @@ CREATE TABLE `user_role` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `role_id` (`role_id`),
-  CONSTRAINT `user_role_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `user_role_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `mybatisUser` (`id`),
   CONSTRAINT `user_role_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户角色表';
 

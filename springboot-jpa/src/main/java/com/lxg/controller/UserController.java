@@ -2,7 +2,7 @@ package com.lxg.controller;
 
 import com.lxg.common.PageResult;
 import com.lxg.common.Result;
-import com.lxg.model.User;
+import com.lxg.model.JpaUser;
 import com.lxg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,24 +24,24 @@ public class UserController {
 
     /**
      * 新增
-     * @param user 用户
+     * @param jpaUser 用户
      */
     @RequestMapping(method = RequestMethod.POST)
-    public Result addUser(@RequestBody User user) {
-        userService.saveUser(user);
+    public Result addUser(@RequestBody JpaUser jpaUser) {
+        userService.saveUser(jpaUser);
         return Result.success();
     }
 
     /**
      * 修改
-     * @param user
+     * @param jpaUser
      */
     @RequestMapping(method = RequestMethod.PUT)
-    public Result updateUser(@RequestBody User user) {
-        if (user.getId() == null || "".equals(user.getId())) {
+    public Result updateUser(@RequestBody JpaUser jpaUser) {
+        if (jpaUser.getId() == null || "".equals(jpaUser.getId())) {
             return Result.fail("无id,更新失败");
         }
-        userService.saveUser(user);
+        userService.saveUser(jpaUser);
         return Result.success();
     }
 
@@ -60,7 +60,7 @@ public class UserController {
      * 查询所有
      */
     @RequestMapping(method = RequestMethod.GET)
-    public List<User> findAllUser() {
+    public List<JpaUser> findAllUser() {
         return userService.findAll();
     }
 
@@ -89,7 +89,7 @@ public class UserController {
      */
     @RequestMapping(value = "/search/{page}/{size}",method = RequestMethod.POST)
     public Result findSearch(@RequestBody Map searchMap,@PathVariable int page,@PathVariable int size){
-        Page<User> pageBean = userService.findSearch(searchMap, page, size);
+        Page<JpaUser> pageBean = userService.findSearch(searchMap, page, size);
         return Result.success(new PageResult<>(pageBean.getTotalElements(),pageBean.getContent()) );
     }
 }

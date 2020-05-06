@@ -1,4 +1,4 @@
-package com.lxg.model;
+package com.lxg.model.poi;
 
 import lombok.Data;
 

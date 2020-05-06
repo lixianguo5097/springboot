@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2019-12-11
  */
 @Data
-public class User {
+public class SwaggerUser {
     private Long id;
     /** 姓名 */
     private String name;
@@ -15,10 +15,10 @@ public class User {
     /** 年龄 */
     private Integer age;
 
-    public User() {
+    public SwaggerUser() {
     }
 
-    public User(Long id, String name, Integer age) {
+    public SwaggerUser(Long id, String name, Integer age) {
         this.id = id;
         this.name = name;
         this.age = age;

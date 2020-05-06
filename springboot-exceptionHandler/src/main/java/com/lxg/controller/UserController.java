@@ -1,7 +1,7 @@
 package com.lxg.controller;
 
 import com.lxg.common.Result;
-import com.lxg.model.User;
+import com.lxg.model.ExceptionUser;
 import com.lxg.exception.MyException;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,13 +17,13 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     @PostMapping
-    public Result insert(@RequestBody User user) {
-        if (user.getName() == null) {
+    public Result insert(@RequestBody ExceptionUser exceptionUser) {
+        if (exceptionUser.getName() == null) {
             //抛出一个自定义异常
             throw MyException.newException("用户名不能为空");
         }
         //如果没有异常，则返回数据为上传的user
-        return Result.success(user);
+        return Result.success(exceptionUser);
     }
 
     @DeleteMapping

@@ -1,6 +1,5 @@
 package com.lxg.model;
 
-import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,9 +10,8 @@ import java.io.Serializable;
  * @author LXG
  * @date 2019-10-28
  */
-@TableName("t_user")
 @Data
-public class User implements Serializable {
+public class ExceptionUser implements Serializable {
     /** id */
     private String id;
     /** 姓名 */

@@ -1,8 +1,8 @@
 package com.lxg.model;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 
@@ -11,14 +11,10 @@ import java.io.Serializable;
  * @author LXG
  * @date 2019-10-28
  */
-
+@TableName("t_user")
 @Data
-@Entity
-@Table(name="t_user")
-public class User implements Serializable {
-    /** 编号 */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class MybatisUser implements Serializable {
+    /** id */
     private String id;
     /** 姓名 */
     private String name;

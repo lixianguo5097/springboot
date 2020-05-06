@@ -1,6 +1,6 @@
 package com.lxg.controller;
 
-import com.lxg.model.User;
+import com.lxg.model.SwaggerUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -24,25 +24,25 @@ public class UserController {
 	/**
 	 * ApiOperation注解来给API增加说明、通过@ApiParam注解来给参数增加说明。
 	 * value 是标题,notes是详细说明
-	 * @param user 用户
+	 * @param swaggerUser 用户
 	 * @return 测试map
 	 */
 	@ApiOperation(value="创建用户", notes="根据User对象创建用户")
 	@PostMapping("/user")
-    public Map<String, Object> insert(@ApiParam(value = "用户详细实体user", required = true)@RequestBody User user) {
+    public Map<String, Object> insert(@ApiParam(value = "用户详细实体user", required = true)@RequestBody SwaggerUser swaggerUser) {
 		Map<String, Object> map = new HashMap<>(16);
 		map.put("respMsg", "新增成功");
-		map.put("respData", user);
+		map.put("respData", swaggerUser);
 		map.put("respCode", 200);
 		return map;
     }
     
 	@ApiOperation(value="更新用户", notes="根据User对象更新用户")
 	@PutMapping("/user")
-    public Map<String, Object>  update(@ApiParam(value = "用户详细实体user", required = true)@RequestBody User user) {
+    public Map<String, Object>  update(@ApiParam(value = "用户详细实体user", required = true)@RequestBody SwaggerUser swaggerUser) {
 		Map<String, Object> map = new HashMap<>(16);
 		map.put("respMsg", "更新成功");
-		map.put("respData", user);
+		map.put("respData", swaggerUser);
 		map.put("respCode", 200);
 		return map;
     }
@@ -59,10 +59,10 @@ public class UserController {
 
 	@ApiOperation(value="获取用户列表", notes="根据User对象查询用户信息")
     @GetMapping("/user")
-    public List<User> findByUser() {
-		List<User> list = new ArrayList<>();
-		list.add(new User(1L,"张三",18));
-		list.add(new User(2L,"李四",20));
+    public List<SwaggerUser> findByUser() {
+		List<SwaggerUser> list = new ArrayList<>();
+		list.add(new SwaggerUser(1L,"张三",18));
+		list.add(new SwaggerUser(2L,"李四",20));
         return list;
     }
 }

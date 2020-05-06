@@ -2,6 +2,7 @@ package com.lxg.model;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 
@@ -10,9 +11,14 @@ import java.io.Serializable;
  * @author LXG
  * @date 2019-10-28
  */
+
 @Data
-public class User implements Serializable {
-    /** id */
+@Entity
+@Table(name="t_user")
+public class JpaUser implements Serializable {
+    /** 编号 */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     /** 姓名 */
     private String name;

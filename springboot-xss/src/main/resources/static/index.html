@@ -42,7 +42,7 @@
             var password = $("#password").val();
             $.ajax({
                 type: 'POST',
-                url: "xss/user",
+                url: "xss/mybatisUser",
                 data: JSON.stringify({
                     "username":username,
                     "password":password

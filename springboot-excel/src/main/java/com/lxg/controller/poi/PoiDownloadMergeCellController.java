@@ -1,7 +1,7 @@
-package com.lxg.controller;
+package com.lxg.controller.poi;
 
-import com.lxg.model.Data;
-import com.lxg.model.ExcelModel;
+import com.lxg.model.poi.Data;
+import com.lxg.model.poi.ExcelModel;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,21 +23,31 @@ import java.util.List;
  * @date 2020-4-28
  */
 @RestController
-@RequestMapping("/download")
+@RequestMapping("/poi/download")
 public class PoiDownloadMergeCellController {
+
+    @GetMapping("/downloadMergeCellLocal")
+    public String downloadMergeCellLocal() {
+        try {
+            HSSFWorkbook workbook = ExcelModel.createExcel(getData());
+
+            //下载到本地
+            FileOutputStream out = new FileOutputStream(new File("D:/data_merge_local.xls"));
+            workbook.write(out);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "download success";
+    }
 
     @GetMapping("/downloadMergeCell")
     public void downloadMergeCell(HttpServletResponse response) {
         try {
             HSSFWorkbook workbook = ExcelModel.createExcel(getData());
             //浏览器下载附件
-            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("data.xls", "UTF-8"));
+            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("data_merge_browser.xls", "UTF-8"));
             workbook.write(response.getOutputStream());
-
-            //下载到本地
-            FileOutputStream out = new FileOutputStream(new File("D:/data.xls"));
-            workbook.write(out);
-
         } catch (IOException e) {
             e.printStackTrace();
         }

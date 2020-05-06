@@ -1,6 +1,6 @@
 package com.lxg.controller;
 
-import com.lxg.model.User;
+import com.lxg.model.XssUser;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class XssController {
 
     @PostMapping(value = "/user")
-    public User user(@RequestBody User user) {
-        System.out.println(user);
-        user.setUsername("<script>alert('xss')</script>");
-        user.setPassword("&lt;script&gt;alert('xss')&lt;/script&gt;");
-        return user;
+    public XssUser user(@RequestBody XssUser xssUser) {
+        System.out.println(xssUser);
+        xssUser.setUsername("<script>alert('xss')</script>");
+        xssUser.setPassword("&lt;script&gt;alert('xss')&lt;/script&gt;");
+        return xssUser;
     }
 
     @PostMapping(value = "/postUser")
@@ -34,9 +34,9 @@ public class XssController {
     }
 
     @GetMapping(value = "/t")
-    public User t(String name){
-        User user = new User();
-        user.setUsername("<script>alert('ffsafg')</script>");
-        return user;
+    public XssUser t(String name){
+        XssUser xssUser = new XssUser();
+        xssUser.setUsername("<script>alert('ffsafg')</script>");
+        return xssUser;
     }
 }

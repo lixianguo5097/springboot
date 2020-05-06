@@ -2,7 +2,7 @@ package com.lxg.controller;
 
 
 import com.lxg.common.Result;
-import com.lxg.model.User;
+import com.lxg.model.MybatisUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.lxg.service.UserService;
@@ -23,24 +23,24 @@ public class UserController {
 
     /**
      * 新增
-     * @param user
+     * @param mybatisUser
      */
     @PostMapping
-    public Result addUser(@RequestBody User user) {
-        userService.addUser(user);
+    public Result addUser(@RequestBody MybatisUser mybatisUser) {
+        userService.addUser(mybatisUser);
         return Result.success();
     }
 
     /**
      * 根据id修改
-     * @param user
+     * @param mybatisUser
      */
     @PutMapping
-    public Result updateUser(@RequestBody User user) {
-        if (user.getId() == null || user.getId().equals("")) {
+    public Result updateUser(@RequestBody MybatisUser mybatisUser) {
+        if (mybatisUser.getId() == null || mybatisUser.getId().equals("")) {
             return Result.fail("无id，更新失败");
         }
-        userService.updateUser(user);
+        userService.updateUser(mybatisUser);
         return Result.success();
     }
 
@@ -59,7 +59,7 @@ public class UserController {
      * 查询所有
      */
     @GetMapping
-    public List<User> findAllUser() {
+    public List<MybatisUser> findAllUser() {
         return userService.findAll();
     }
 

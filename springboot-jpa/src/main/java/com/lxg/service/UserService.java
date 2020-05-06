@@ -1,7 +1,7 @@
 package com.lxg.service;
 
 import com.lxg.dao.UserDao;
-import com.lxg.model.User;
+import com.lxg.model.JpaUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,16 +27,16 @@ public class UserService {
 
 	/**
 	 * 新增或修改，无id为新增，有id为修改
-	 * @param user
+	 * @param jpaUser
 	 */
 //	@Transactional
-	public void saveUser(User user) {
-		userDao.save(user);
+	public void saveUser(JpaUser jpaUser) {
+		userDao.save(jpaUser);
 		/**
 		 * 这里的save方法会更新所有字段，如果只传了age属性进行更新，
 		 * name属性就会修改为null，避免这个问题需要使用下面的原生Sql
 		 * 并且加上方法上的@Transactional注解
-		 * userDao.update(user.getId(),user.getAge());
+		 * userDao.update(jpaUser.getId(),jpaUser.getAge());
 		 */
 	}
 
@@ -52,7 +52,7 @@ public class UserService {
 	/**
 	 * 查询所有
 	 */
-	public List<User> findAll() {
+	public List<JpaUser> findAll() {
 		return userDao.findAll();
 	}
 
@@ -61,7 +61,7 @@ public class UserService {
 	 * 
 	 * @param id
 	 */
-	public User findUserById(String id) {
+	public JpaUser findUserById(String id) {
 		return userDao.findById(id).get();
 	}
 
@@ -69,8 +69,8 @@ public class UserService {
      * 条件查询+age排序
      * @param searchMap
      */
-	public List<User> findSearch(Map searchMap) {
-        Specification<User> specification = createSpecification(searchMap);
+	public List<JpaUser> findSearch(Map searchMap) {
+        Specification<JpaUser> specification = createSpecification(searchMap);
 		Sort sort = new Sort(Sort.Direction.ASC, "age");
         return userDao.findAll(specification,sort);
 	}
@@ -81,8 +81,8 @@ public class UserService {
      * @param page
      * @param size
      */
-	public Page<User> findSearch(Map searchMap, int page, int size) {
-		Specification<User> specification = createSpecification(searchMap);
+	public Page<JpaUser> findSearch(Map searchMap, int page, int size) {
+		Specification<JpaUser> specification = createSpecification(searchMap);
 		Sort sort = new Sort(Sort.Direction.ASC, "age");
 		PageRequest pageRequest = PageRequest.of(page - 1, size,sort);
 		return userDao.findAll(specification, pageRequest);
@@ -91,11 +91,11 @@ public class UserService {
 	/**
 	 * 创建查询条件
 	 */
-	private Specification<User> createSpecification(Map searchMap) {
-		return new Specification<User>() {
+	private Specification<JpaUser> createSpecification(Map searchMap) {
+		return new Specification<JpaUser>() {
 			@Override
-			public Predicate toPredicate(Root<User> root, CriteriaQuery<?> criteriaQuery,
-					CriteriaBuilder criteriaBuilder) {
+			public Predicate toPredicate(Root<JpaUser> root, CriteriaQuery<?> criteriaQuery,
+										 CriteriaBuilder criteriaBuilder) {
 				List<Predicate> preList = new ArrayList<Predicate>();
 				if (searchMap.get("name") != null && !"".equals((searchMap.get("name")))) {
 					preList.add(

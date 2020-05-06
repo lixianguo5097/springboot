@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POI导入导出</title>
+</head>
+<body>
+
+<h4>程序所在服务器的D盘根目录生成:</h4>
+<a href="/poi/download/excelSimpleLocal">一个名为user_simple的简易Excel</a>
+
+<p/>
+<a href="/poi/download/excelFromDBLocal">一个名为user_fromdb的Excel,数据从数据库获取</a>
+
+<p/>
+<a href="/poi/download/excelByReflexLocal">一个名为user_reflex的Excel,运用了反射获取值</a>
+
+<p/>
+<a href="/poi/download/downloadMergeCellLocal">一个名为data_merge_local的Excel,合并了单元格</a>
+
+<p/>
+<h4>浏览器作为附件下载:</h4>
+<a href="/poi/download/excelByReflexBrowser">一个名为user_download的Excel,运用了反射获取值</a>
+
+<p/>
+<a href="/poi/download/downloadMergeCell">一个名为data_merge_browser的Excel,合并了单元格</a>
+
+<hr>
+<h4>POI导入,上传上面生成的的user_simple.xls/user_fromdb.xls/user_reflex/文件</h4>
+<form enctype="multipart/form-data" method="post" action="poi/upload/uploadExcel">
+    <input type="file" name="file"/>
+    <input type="submit" value="上传"/>
+</form>
+
+<p/>
+<a href="/poi/upload/localExcel">导入D盘的user_reflex.xls</a>
+
+</body>
+</html>

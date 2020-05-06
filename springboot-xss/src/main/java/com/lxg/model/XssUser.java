@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2020-4-17
  */
 @Data
-public class User {
+public class XssUser {
     private Integer id;
     private String username;
     private String password;

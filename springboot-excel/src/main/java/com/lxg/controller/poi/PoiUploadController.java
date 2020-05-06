@@ -1,6 +1,6 @@
-package com.lxg.controller;
+package com.lxg.controller.poi;
 
-import com.lxg.model.User;
+import com.lxg.model.poi.User;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -21,16 +21,17 @@ import java.util.List;
  */
 @SuppressWarnings("all")
 @RestController
-@RequestMapping("/upload")
+@RequestMapping("/poi/upload")
 public class PoiUploadController {
 
     /**
      * 直接读本地文件
      */
     @GetMapping("/localExcel")
-    public void localExcel() {
+    public List<User> localExcel() {
+        List<User> userList = new ArrayList<>();
         try {
-            File uploadFile = new File("D:\\student.xls");
+            File uploadFile = new File("D:\\user_reflex.xls");
             FileInputStream inFile = new FileInputStream(uploadFile);
             HSSFWorkbook workbook = new HSSFWorkbook(inFile);
             //获取工作表数量
@@ -38,12 +39,11 @@ public class PoiUploadController {
             if (numberOfSheets > 0) {
                 //读取所有的sheet 也可以只读一个sheet
                 for (int i = 0; i < numberOfSheets; i++) {
-                    List<User> userList = new ArrayList<>();
                     HSSFSheet sheet = workbook.getSheetAt(i);
                     //总行数
                     int rows = sheet.getLastRowNum() ;
                     //从第二行开始遍历，因为第一行是标题行
-                    for (int j = 1; j < rows; j++) {
+                    for (int j = 1; j < rows+1; j++) {
                         User user = new User();
                         //第一个单元格--学号
                         HSSFCell cellId = sheet.getRow(j).getCell(0);
@@ -71,6 +71,7 @@ public class PoiUploadController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return userList;
     }
 
     /**
@@ -91,7 +92,7 @@ public class PoiUploadController {
                     //总行数
                     int rows = sheet.getLastRowNum() ;
                     //从第二行开始遍历，因为第一行是标题行
-                    for (int j = 1; j < rows; j++) {
+                    for (int j = 1; j < rows+1; j++) {
                         User user = new User();
                         //第一个单元格--学号
                         HSSFCell cellId = sheet.getRow(j).getCell(0);

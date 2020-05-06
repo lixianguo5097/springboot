@@ -3,8 +3,8 @@ package com.lxg.service.impl;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.lxg.common.PageResult;
-import com.lxg.model.User;
-import com.lxg.mapper.UserMapper;
+import com.lxg.model.MybatisUser;
+import com.lxg.mapper.MyBatisUserMapper;
 import com.lxg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,54 +20,54 @@ import java.util.Map;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    private UserMapper userMapper;
+    private MyBatisUserMapper myBatisUserMapper;
 
     @Override
-    public void addUser(User user) {
-        userMapper.insert(user);
+    public void addUser(MybatisUser mybatisUser) {
+        myBatisUserMapper.insert(mybatisUser);
     }
 
     @Override
-    public void updateUser(User user) {
-        userMapper.updateById(user);
+    public void updateUser(MybatisUser mybatisUser) {
+        myBatisUserMapper.updateById(mybatisUser);
     }
 
     @Override
     public void deleteUser(String id) {
-        userMapper.deleteById(id);
+        myBatisUserMapper.deleteById(id);
     }
 
     @Override
-    public List<User> findAll() {
-        return userMapper.selectList(null);
+    public List<MybatisUser> findAll() {
+        return myBatisUserMapper.selectList(null);
     }
 
     @Override
-    public User findUserById(String id) {
-        return userMapper.selectById(id);
+    public MybatisUser findUserById(String id) {
+        return myBatisUserMapper.selectById(id);
     }
 
     @Override
-    public List<User> findSearch(Map searchMap) {
-        EntityWrapper<User> wrapper = createSearchCondition(searchMap);
+    public List<MybatisUser> findSearch(Map searchMap) {
+        EntityWrapper<MybatisUser> wrapper = createSearchCondition(searchMap);
         //根据age倒序查询
         wrapper.orderBy(true, "age", false);
-        return userMapper.selectList(wrapper);
+        return myBatisUserMapper.selectList(wrapper);
     }
 
     @Override
-    public PageResult<User> findSearch(Map searchMap, int page, int size) {
-        EntityWrapper<User> wrapper = createSearchCondition(searchMap);
+    public PageResult<MybatisUser> findSearch(Map searchMap, int page, int size) {
+        EntityWrapper<MybatisUser> wrapper = createSearchCondition(searchMap);
         //根据age倒序查询
         wrapper.orderBy(true, "age", false);
-        Page<User> userPage = new Page<>(page,size);
-        List<User> list = userMapper.selectPage(userPage, wrapper);
+        Page<MybatisUser> userPage = new Page<>(page,size);
+        List<MybatisUser> list = myBatisUserMapper.selectPage(userPage, wrapper);
         return new PageResult<>(userPage.getTotal(),list);
     }
 
     @Override
-    public List<User> findByXml() {
-        return userMapper.findByXml();
+    public List<MybatisUser> findByXml() {
+        return myBatisUserMapper.findByXml();
     }
 
     /**
@@ -75,8 +75,8 @@ public class UserServiceImpl implements UserService {
      * @param searchMap
      * @return
      */
-    public EntityWrapper<User> createSearchCondition(Map searchMap) {
-        EntityWrapper<User> wrapper = new EntityWrapper<>(new User());
+    public EntityWrapper<MybatisUser> createSearchCondition(Map searchMap) {
+        EntityWrapper<MybatisUser> wrapper = new EntityWrapper<>(new MybatisUser());
         if (searchMap.get("name") != null) {
             wrapper.eq("name", searchMap.get("name"));
         }

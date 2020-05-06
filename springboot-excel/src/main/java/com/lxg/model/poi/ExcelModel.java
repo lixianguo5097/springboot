@@ -1,4 +1,4 @@
-package com.lxg.model;
+package com.lxg.model.poi;
 
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.BorderStyle;

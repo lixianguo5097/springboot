@@ -1,7 +1,7 @@
-package com.lxg.controller;
+package com.lxg.controller.poi;
 
 import com.lxg.constant.ExcelConstant;
-import com.lxg.model.User;
+import com.lxg.model.poi.User;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddressList;
@@ -29,23 +29,29 @@ import java.util.List;
  * 可以先将excel生成在静态服务器例如nginx配置的某个位置，然后通过HTTP请求下载下来
  *
  * 如果是Get方式请求，拼接url即可
- *
+ * 
+ * 更改为浏览器附件下载，只需要在最后加上：
+ *  response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("student.xls", "UTF-8"));
+ *  workbook.write(response.getOutputStream());
+ *  
+ *  同时去掉FileOutputStream
+ * 
  * @author LXG
  * @date 2020-4-24
  */
 @SuppressWarnings("all")
 @RestController
-@RequestMapping("/download")
+@RequestMapping("/poi/download")
 public class PoiDownloadController {
 
 
-    @GetMapping("/excelDemo")
-    public void excelDemo() {
-        try (FileOutputStream out = new FileOutputStream("D:/student.xls");) {
+    @GetMapping("/excelSimpleLocal")
+    public String excelSimpleLocal() {
+        try (FileOutputStream out = new FileOutputStream("D:/user_simple.xls");) {
             //创建工作簿
             HSSFWorkbook workbook = new HSSFWorkbook();
             //创建工作表
-            HSSFSheet sheet = workbook.createSheet("花名册");
+            HSSFSheet sheet = workbook.createSheet("用户表");
 
             //设置列宽
             sheet.setDefaultColumnWidth(20);
@@ -61,38 +67,43 @@ public class PoiDownloadController {
             //内容行 第一行
             HSSFRow rowBodyOne = sheet.createRow(1);
             //第一行的第一个单元格
-            rowBodyOne.createCell(0).setCellValue(2020427);
+            rowBodyOne.createCell(0).setCellValue("2020427");
             //第一行的第二个单元格
             rowBodyOne.createCell(1).setCellValue("张三");
             //第一行的第三个单元格
             rowBodyOne.createCell(2).setCellValue(22);
+            //第一行的第四个单元格
+            rowBodyOne.createCell(3).setCellValue("男");
 
             //内容行 第二行
             HSSFRow rowBodyTwo = sheet.createRow(2);
-            //第一行的第一个单元格
-            rowBodyTwo.createCell(0).setCellValue(2020428);
-            //第一行的第二个单元格
+            //第二行的第一个单元格
+            rowBodyTwo.createCell(0).setCellValue("2020428");
+            //第二行的第二个单元格
             rowBodyTwo.createCell(1).setCellValue("李四");
-            //第一行的第三个单元格
+            //第二行的第三个单元格
             rowBodyTwo.createCell(2).setCellValue(21);
+            //第二行的第四个单元格
+            rowBodyTwo.createCell(3).setCellValue("女");
 
             //输出内容
             workbook.write(out);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return "download success";
     }
 
     /**
      * 假装从数据库获取的数据
      */
-    @GetMapping("/excelFromDB")
-    public void excelFromDB() {
-        try (FileOutputStream out = new FileOutputStream("D:/test.xls")) {
+    @GetMapping("/excelFromDBLocal")
+    public String excelFromDB() {
+        try (FileOutputStream out = new FileOutputStream("D:/user_fromdb.xls")) {
             //创建工作簿
             HSSFWorkbook workbook = new HSSFWorkbook();
             //创建工作表
-            HSSFSheet sheet = workbook.createSheet("花名册");
+            HSSFSheet sheet = workbook.createSheet("用户表");
 
             //设置列宽
             sheet.setDefaultColumnWidth(20);
@@ -121,18 +132,19 @@ public class PoiDownloadController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return "download success";
     }
 
     /**
      * 反射获取字段 并且设置样式
      */
-    @GetMapping("/excelByReflex")
-    public void excelByReflex() {
-        try (FileOutputStream out = new FileOutputStream("D:/student.xls")) {
+    @GetMapping("/excelByReflexLocal")
+    public String excelByReflex() {
+        try (FileOutputStream out = new FileOutputStream("D:/user_reflex.xls")) {
             //创建工作簿
             HSSFWorkbook workbook = new HSSFWorkbook();
             //创建工作表
-            HSSFSheet sheet = workbook.createSheet("花名册");
+            HSSFSheet sheet = workbook.createSheet("用户表");
 
             //设置列宽
             sheet.setDefaultColumnWidth(20);
@@ -204,6 +216,7 @@ public class PoiDownloadController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return "download success";
     }
 
 
@@ -256,7 +269,7 @@ public class PoiDownloadController {
             //创建工作簿
             HSSFWorkbook workbook = new HSSFWorkbook();
             //创建工作表
-            HSSFSheet sheet = workbook.createSheet("花名册");
+            HSSFSheet sheet = workbook.createSheet("用户表");
 
             //设置列宽
             sheet.setDefaultColumnWidth(20);
@@ -323,9 +336,9 @@ public class PoiDownloadController {
                     changeType(workbook, rows, j, value);
                 }
             }
-            //输出内容
 
-            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("student.xls", "UTF-8"));
+            //输出内容
+            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("user_download.xls", "UTF-8"));
             workbook.write(response.getOutputStream());
             workbook.close();
         } catch (Exception e) {
