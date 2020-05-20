@@ -18,6 +18,7 @@ import java.net.URLEncoder;
 import java.util.*;
 
 /**
+ * 不要有返回值
  * @author LXG
  * @date 2020-4-30
  */
@@ -34,9 +35,7 @@ public class EasyExcelFillController {
     public void simpleFill(HttpServletResponse response) {
         // 模板注意 用{} 来表示你要用的变量 如果本来就有"{","}" 特殊字符 用"\{","\}"代替
         try {
-            URI uri = EasyExcelFillController.class.getClassLoader().getResource("excel_template/simple_template.xlsx").toURI();
-            File uriFile = new File(uri);
-            String templateFileName = uriFile.getAbsolutePath();
+            String templateFileName = EasyExcelFillController.class.getResource("/").getPath()+"excel_template/simple_template.xlsx";
             // 根据对象填充
             // 这里 会填充到第一个sheet， 然后文件流会自动关闭
             EasyUser user = new EasyUser();
@@ -48,7 +47,7 @@ public class EasyExcelFillController {
             String fileName = URLEncoder.encode("simple_file", "UTF-8");
             response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
             EasyExcel.write(response.getOutputStream()).withTemplate(templateFileName).sheet().doFill(user);
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -58,10 +57,7 @@ public class EasyExcelFillController {
         try {
             // 模板注意 用{} 来表示你要用的变量 如果本来就有"{","}" 特殊字符 用"\{","\}"代替
             // {} 代表普通变量 {.} 代表是list的变量
-            URI uri = EasyExcelFillController.class.getClassLoader().getResource("excel_template/list_template.xlsx").toURI();
-            File uriFile = new File(uri);
-            String templateFileName = uriFile.getAbsolutePath();
-
+            String templateFileName = EasyExcelFillController.class.getResource("/").getPath()+"excel_template/list_template.xlsx";
             String fileName = URLEncoder.encode("list_file", "UTF-8");
             response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
             ExcelWriter excelWriter = EasyExcel.write(response.getOutputStream()).withTemplate(templateFileName).build();
@@ -78,7 +74,7 @@ public class EasyExcelFillController {
             map.put("remark", "这是一条测试备注信息");
             excelWriter.fill(map, writeSheet);
             excelWriter.finish();
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
