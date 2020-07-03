@@ -1,0 +1,7 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: kafka-consumer
+  profiles:
+    active: common

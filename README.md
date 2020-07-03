@@ -10,5 +10,6 @@ springboot-multiDatasource:springboot整合多数据源\
 springboot-logs:springboot整合@Slf4j+logback输出日志,使用AOP统一处理Web请求日志,多环境配置\
 springboot-swagger:springboot整合swagger2\
 springboot-shiro:基于前后端分离的shiro权限认证,整合日志模块、jwt\
-springboot-xss:整合防xss攻击模块
-springboot-excel:整合poi以及easyExcel导入导出excel表格
+springboot-xss:整合防xss攻击模块\
+springboot-excel:整合poi以及easyExcel导入导出excel表格\
+springboot-kafka:整合kafka实现消息推送

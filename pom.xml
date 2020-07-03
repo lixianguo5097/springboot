@@ -7,19 +7,20 @@
     <artifactId>springboot</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-<modules>
-    <module>springboot-excel</module>
-    <module>springboot-exceptionHandler</module>
-    <module>springboot-file</module>
-    <module>springboot-freemarker</module>
-    <module>springboot-jpa</module>
-    <module>springboot-jsp</module>
-    <module>springboot-logs</module>
-    <module>springboot-multiDatasource</module>
-    <module>springboot-mybatisPlus</module>
-    <module>springboot-shiro</module>
-    <module>springboot-swagger</module>
-    <module>springboot-xss</module>
-</modules>
+    <modules>
+        <module>springboot-excel</module>
+        <module>springboot-exceptionHandler</module>
+        <module>springboot-file</module>
+        <module>springboot-freemarker</module>
+        <module>springboot-jpa</module>
+        <module>springboot-jsp</module>
+        <module>springboot-logs</module>
+        <module>springboot-multiDatasource</module>
+        <module>springboot-mybatisPlus</module>
+        <module>springboot-shiro</module>
+        <module>springboot-swagger</module>
+        <module>springboot-xss</module>
+        <module>springboot-kafka</module>
+    </modules>
 
 </project>
