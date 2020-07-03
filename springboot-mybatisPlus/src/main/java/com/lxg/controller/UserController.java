@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.lxg.service.UserService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class UserController {
      * @param mybatisUser
      */
     @PostMapping
-    public Result addUser(@RequestBody MybatisUser mybatisUser) {
+    public Result addUser(@Valid @RequestBody MybatisUser mybatisUser) {
         userService.addUser(mybatisUser);
         return Result.success();
     }

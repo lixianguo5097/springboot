@@ -14,6 +14,7 @@ import lombok.Data;
  * @HeadRowHeight(20) 标题行行高
  * @ColumnWidth(25) 列换
  *
+ * 如果日期格式的字段，需要定义日期格式，可以在字段前加上 @DateTimeFormat("HH:mm:ss")注解
  * @author LXG
  * @date 2020-4-30
  */
