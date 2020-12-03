@@ -12,3 +12,12 @@ spring:
 
 #文件存储路径
 filepath: D:/file/
+
+# OSS相关配置信息
+aliyun:
+  oss:
+    endpoint: oss-cn-shenzhen.aliyuncs.com
+    accessKeyId: LTAI3SPz3HbH8cW5
+    accessKeySecret: dMsXPDNqUpsWN4O5QVuBb0YhXO4ZID
+    bucketName: lxg-test
+    urlPrefix: lxg-test.oss-cn-shenzhen.aliyuncs.com

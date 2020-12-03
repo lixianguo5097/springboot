@@ -12,5 +12,15 @@
 <a href="/file/download">文件下载</a>
 <p/>
 <a href="/file/downloadZip">ZIP文件下载</a>
+<br/>
+以下是OSS文件接口
+<form enctype="multipart/form-data" method="post" action="oss/file/upload">
+    <input type="file" name="file"/>
+    <input type="submit" value="上传"/>
+</form>
+<form  action="oss/file/download" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="fileName"/>
+    <input type="submit" value="下载"/>
+</form>
 </body>
 </html>
