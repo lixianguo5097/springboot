@@ -21,6 +21,8 @@
         <module>springboot-swagger</module>
         <module>springboot-xss</module>
         <module>springboot-kafka</module>
+        <module>springboot-elasticSearch</module>
+        <module>springboot-websocket</module>
     </modules>
 
 </project>

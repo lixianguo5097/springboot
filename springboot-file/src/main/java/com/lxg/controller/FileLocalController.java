@@ -22,7 +22,7 @@ import java.util.zip.ZipOutputStream;
 @RestController
 @RequestMapping("/file")
 @Slf4j
-public class FileController {
+public class FileLocalController {
 
     @Value("${filepath}")
     private String filepath;
