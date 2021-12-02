@@ -16,3 +16,4 @@ springboot-excel:整合poi以及easyExcel导入导出excel表格\
 springboot-kafka:整合kafka实现消息推送
 springboot-elasticSearch:整合elasticSearch
 springboot-websocket:整合websocket前后端通信
+springboot-multiDatasource2:使用MybatisPlus实现多数据源

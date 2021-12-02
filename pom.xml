@@ -23,6 +23,7 @@
         <module>springboot-kafka</module>
         <module>springboot-elasticSearch</module>
         <module>springboot-websocket</module>
+        <module>springboot-multiDatasource2</module>
     </modules>
 
 </project>
