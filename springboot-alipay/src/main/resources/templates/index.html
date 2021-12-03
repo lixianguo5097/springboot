@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <title>支付页面</title>
+</head>
+<body>
+
+<div>
+    价格：<input id="price" type="text"><p>
+    订单名称：<input id="name" type="text"><p>
+    描述：<input id="describe" type="text" ><p>
+    <input id="submit" type="button" value="提交订单">
+</div>
+<br>
+<div>
+    订单编号：<input id="orderId" type="text"><p>
+    <input id="submit2" type="button" value="提交">
+</div>
+<script>
+    $('#submit2').click(function () {
+
+        //后台使用对象的形式接受
+        $.ajax({
+            url: "/search/status/"+$('#orderId').val(),
+            type: "get",
+            success: function (data) {
+                document.write(data);
+                document.close();
+            }
+        });
+    })
+    $('#submit').click(function () {
+        var obj = JSON.stringify({
+            'price': $('#price').val(),
+            'name': $('#name').val(),
+            'describe': $('#describe').val()
+        });
+
+        //后台使用对象的形式接受
+        $.ajax({
+            url: "/pay",
+            type: "post",
+            data: obj,
+            contentType: 'application/json;charset=utf-8',
+            success: function (data) {
+                document.write(data);
+                document.close();
+            }
+        });
+    })
+</script>
+</body>
+</html>

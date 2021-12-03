@@ -24,6 +24,7 @@
         <module>springboot-elasticSearch</module>
         <module>springboot-websocket</module>
         <module>springboot-multiDatasource2</module>
+        <module>springboot-alipay</module>
     </modules>
 
 </project>
