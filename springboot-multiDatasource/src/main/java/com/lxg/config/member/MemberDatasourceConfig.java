@@ -30,7 +30,6 @@ public class MemberDatasourceConfig {
      */
     @Bean("memberDataSource")
     public DataSource memberDataSource(MemberConfig memberConfig) throws SQLException {
-        System.out.println(memberConfig);
         MysqlXADataSource mysqlXaDataSource = new MysqlXADataSource();
         mysqlXaDataSource.setUrl(memberConfig.getUrl());
         mysqlXaDataSource.setPinGlobalTxToPhysicalConnection(true);
