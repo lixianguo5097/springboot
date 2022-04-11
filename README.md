@@ -16,4 +16,5 @@ springboot-kafka:整合kafka实现消息推送\
 springboot-elasticSearch:整合elasticSearch\
 springboot-websocket:整合websocket前后端通信\
 springboot-multiDatasource2:使用MybatisPlus实现多数据源\
-springboot-alipay:整合支付宝电脑网页支付
+springboot-alipay:整合支付宝电脑网页支付\
+springboot-limit:整合限流

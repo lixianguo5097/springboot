@@ -25,6 +25,7 @@
         <module>springboot-websocket</module>
         <module>springboot-multiDatasource2</module>
         <module>springboot-alipay</module>
+        <module>springboot-limit</module>
     </modules>
 
 </project>
