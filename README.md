@@ -17,4 +17,5 @@ springboot-elasticSearch:整合elasticSearch\
 springboot-websocket:整合websocket前后端通信\
 springboot-multiDatasource2:使用MybatisPlus实现多数据源\
 springboot-alipay:整合支付宝电脑网页支付\
-springboot-limit:整合限流
+springboot-limit:整合限流\
+springboot-postgre:整合mybatis-plus+postgresql,实现存储数组类型字段
