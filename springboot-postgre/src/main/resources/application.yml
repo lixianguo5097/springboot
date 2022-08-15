@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.56.102:5432/postgres
+    url: jdbc:postgresql://192.168.56.102:5432/postgres?currentSchema=public&stringtype=unspecified
     username: postgres
     password: postgres
     druid:
@@ -38,7 +38,7 @@ spring:
 #mybatis的相关配置
 mybatis-plus:
   mapper-locations: classpath:com/lxg/mapper/xml/*Mapper.xml
-  typeAliasesPackage: com.lxg.entity
+  type-aliases-package: com.lxg.entity
   global-config:
     banner: false
     db-config:

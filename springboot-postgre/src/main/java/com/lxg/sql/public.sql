@@ -12,7 +12,7 @@
  Target Server Version : 140004
  File Encoding         : 65001
 
- Date: 12/08/2022 15:02:31
+ Date: 15/08/2022 13:50:38
 */
 
 
@@ -32,11 +32,17 @@ CACHE 1;
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."student";
 CREATE TABLE "public"."student" (
-  "serial_id" varchar COLLATE "pg_catalog"."default",
-  "name" varchar[] COLLATE "pg_catalog"."default",
-  "scores" int4[]
+  "id" varchar COLLATE "pg_catalog"."default",
+  "scores" int4[],
+  "detail" jsonb
 )
 ;
+
+-- ----------------------------
+-- Records of student
+-- ----------------------------
+INSERT INTO "public"."student" VALUES ('1559054351975088129', '{99,72,88}', '{"姓名": "李四", "年龄": "23"}');
+INSERT INTO "public"."student" VALUES ('1559054201080807426', '{97,108,103}', '{"姓名": "张三", "年龄": "21"}');
 
 -- ----------------------------
 -- Table structure for user
@@ -48,6 +54,11 @@ CREATE TABLE "public"."user" (
   "password" varchar(20) COLLATE "pg_catalog"."default"
 )
 ;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO "public"."user" VALUES ('1557985624521191426', '张三', 'abc');
 
 -- ----------------------------
 -- Alter sequences owned by

@@ -70,7 +70,7 @@ public class GeneratorServiceEntity {
         //RestController标签
         strategy.setRestControllerStyle(true);
         //todo 修改替换成你需要的表名，多个表名逗号隔开
-        strategy.setInclude("student");
+        strategy.setInclude("car");
         strategy.setControllerMappingHyphenStyle(true);
         //表名是否有前缀
         strategy.setTablePrefix("");
