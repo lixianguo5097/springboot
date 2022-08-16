@@ -6,9 +6,12 @@ import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.TypeException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
 
 import java.sql.*;
 
+@Component
 public class ArrayTypeHandler extends BaseTypeHandler<Object[]> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ArrayTypeHandler.class);

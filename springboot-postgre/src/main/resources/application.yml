@@ -1,12 +1,13 @@
 server:
-  port: 8089
+  port: 8080
 
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.56.102:5432/postgres?currentSchema=public&stringtype=unspecified
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:postgresql://127.0.0.1:5432/postgres?currentSchema=public&stringtype=unspecified
     username: postgres
-    password: postgres
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       #初始化连接池大小
       initial-size: 5
@@ -21,7 +22,7 @@ spring:
       #配置一个连接在池中最小生存的时间，单位是毫秒
       min-evictable-idle-time-millis: 300000
       #测试连接
-      validation-query: SELECT 1 FROM DUAL
+      validation-query: SELECT 1
       #申请连接的时候检测，建议配置为true，不影响性能，并且保证安全
       test-while-idle: true
       #获取连接时执行检测，建议关闭，影响性能
@@ -33,7 +34,7 @@ spring:
       #开启poolPreparedStatements后生效
       max-pool-prepared-statement-per-connection-size: 20
       #配置扩展插件，常用的插件有=>stat:监控统计  log4j:日志  wall:防御sql注入
-      filters: stat,wall,slf4j
+      filters: stat,slf4j
 
 #mybatis的相关配置
 mybatis-plus:

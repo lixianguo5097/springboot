@@ -1,10 +1,10 @@
 package com.lxg.service.impl;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.plugins.Page;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lxg.common.PageResult;
-import com.lxg.model.MybatisUser;
 import com.lxg.mapper.MyBatisUserMapper;
+import com.lxg.model.MybatisUser;
 import com.lxg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,20 +49,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<MybatisUser> findSearch(Map searchMap) {
-        EntityWrapper<MybatisUser> wrapper = createSearchCondition(searchMap);
+        LambdaQueryWrapper<MybatisUser> wrapper = createSearchCondition(searchMap);
         //根据age倒序查询
-        wrapper.orderBy(true, "age", false);
+        wrapper.orderByDesc(MybatisUser::getAge);
         return myBatisUserMapper.selectList(wrapper);
     }
 
     @Override
     public PageResult<MybatisUser> findSearch(Map searchMap, int page, int size) {
-        EntityWrapper<MybatisUser> wrapper = createSearchCondition(searchMap);
+        LambdaQueryWrapper<MybatisUser> wrapper = createSearchCondition(searchMap);
         //根据age倒序查询
-        wrapper.orderBy(true, "age", false);
-        Page<MybatisUser> userPage = new Page<>(page,size);
-        List<MybatisUser> list = myBatisUserMapper.selectPage(userPage, wrapper);
-        return new PageResult<>(userPage.getTotal(),list);
+        wrapper.orderByDesc(MybatisUser::getAge);
+        Page<MybatisUser> mybatisUserPage = myBatisUserMapper.selectPage(new Page<>(page,size), wrapper);
+        return new PageResult<>(mybatisUserPage.getTotal(),mybatisUserPage.getRecords());
     }
 
     @Override
@@ -75,13 +74,13 @@ public class UserServiceImpl implements UserService {
      * @param searchMap
      * @return
      */
-    public EntityWrapper<MybatisUser> createSearchCondition(Map searchMap) {
-        EntityWrapper<MybatisUser> wrapper = new EntityWrapper<>(new MybatisUser());
+    public LambdaQueryWrapper<MybatisUser> createSearchCondition(Map searchMap) {
+        LambdaQueryWrapper<MybatisUser> wrapper = new LambdaQueryWrapper<>(new MybatisUser());
         if (searchMap.get("name") != null) {
-            wrapper.eq("name", searchMap.get("name"));
+            wrapper.eq(MybatisUser::getName, searchMap.get("name"));
         }
         if (searchMap.get("age") != null) {
-            wrapper.eq("age", searchMap.get("age"));
+            wrapper.eq(MybatisUser::getAge, searchMap.get("age"));
         }
         return wrapper;
     }

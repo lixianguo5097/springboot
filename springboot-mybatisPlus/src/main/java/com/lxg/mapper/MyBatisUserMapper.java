@@ -1,6 +1,6 @@
 package com.lxg.mapper;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lxg.model.MybatisUser;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,6 @@
 package com.lxg;
 
+
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
@@ -15,6 +16,7 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
  * @Date 2020/7/2 10:53
  * @Version 1.0
  **/
+
 public class GeneratorServiceEntity {
 
 
@@ -24,8 +26,9 @@ public class GeneratorServiceEntity {
      * 2：数据库连接地址、账号密码
      * 3：包名parent
      * 4: 生成的表名setInclude，逗号隔开
-     * 5：自定义要求，例如是否覆盖、是否要加IServer
-     */
+     * 5：自定义要求，例如是否覆盖、是否要加IServer*/
+
+
     public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -48,11 +51,12 @@ public class GeneratorServiceEntity {
         // 2.数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         //todo 修改数据源配置
-        dsc.setUrl("jdbc:postgresql://192.168.56.102:5432/postgres");
-        dsc.setDriverName("org.postgresql.Driver");
-        dsc.setUsername("postgres");
-        dsc.setPassword("postgres");
-        dsc.setSchemaName("public");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&characterEncoding=utf-8" +
+                "&zeroDateTimeBehavior=convertToNull&useSSL=false&rewriteBatchedStatements=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai");
+        dsc.setDriverName("com.mysql.jdbc.Driver");
+        dsc.setUsername("root");
+        dsc.setPassword("root");
+        mpg.setDataSource(dsc);
         mpg.setDataSource(dsc);
 
         // 3.包配置

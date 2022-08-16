@@ -5,8 +5,8 @@ spring:
   datasource:
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       #初始化连接池大小
@@ -34,7 +34,7 @@ spring:
       #开启poolPreparedStatements后生效
       max-pool-prepared-statement-per-connection-size: 20
       #配置扩展插件，常用的插件有=>stat:监控统计  log4j:日志  wall:防御sql注入
-      filters: stat,wall,slf4j
+      filters: stat,slf4j
       #打开mergeSql功能；慢SQL记录
       connection-properties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
       #配置DruidStatFilter
