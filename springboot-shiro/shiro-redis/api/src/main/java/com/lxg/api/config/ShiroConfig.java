@@ -67,6 +67,11 @@ public class ShiroConfig {
         //登录用户才可以访问
         filterChainDefinitionMap.put("/api/**","authc");
 
+/*        如果集成了swagger或者knife4j需要放行
+        filterChainDefinitionMap.put("/swagger-resources/**", "anon");
+        filterChainDefinitionMap.put("/v2/api-docs", "anon");
+        filterChainDefinitionMap.put("/doc.html", "anon");
+        filterChainDefinitionMap.put("/webjars/**", "anon");*/
 
         /**
          * 坑二: 过滤链是顺序执行，从上而下，一般讲/** 放到最下面

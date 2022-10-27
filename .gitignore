@@ -31,3 +31,6 @@ Thumbs.db
 Servers
 .metadata
 upload
+*.imi
+.idea
+.gitignore
