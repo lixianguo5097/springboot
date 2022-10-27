@@ -33,7 +33,6 @@
         <module>springboot-limit</module>
         <module>springboot-docker</module>
         <module>springboot-postgre</module>
-        <module>springboot-clickhouse</module>
     </modules>
 
 </project>
